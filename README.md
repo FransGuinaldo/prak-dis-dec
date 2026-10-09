@@ -2,11 +2,11 @@
 # LAPORAN PRAKTIKUM
 ## Pengenalan Git dan GitHub
 
-**Nama:** Franisco G I dc Corbafo
-**NIM:** 255410003 
-**Kelas:** IF-1
-**Mata Kuliah:** Praktikum Sistem Terdistribusi dan Terdesentralisasi
-**Tanggal:** 09 October 2026
+**Nama:Franisco G I dc Corbafo**
+**NIM:255410003**
+**Kelas:IF-1**
+**Mata Kuliah:Praktikum Sistem Terdistribusi dan Terdesentralisasi**
+**Tanggal:09 October 2026**
 
 ---
 
