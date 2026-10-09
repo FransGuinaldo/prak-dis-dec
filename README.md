@@ -82,8 +82,8 @@ Jika versi Git ditampilkan, instalasi dapat dikenali oleh terminal.
 Atur nama dan email yang akan dicatat pada commit. Ganti contoh berikut dengan identitas yang sesuai.
 
 ```bash
-git config --global user.name "Nama Anda"
-git config --global user.email "email@example.com"
+git config --global user.name "FransGuinaldo"
+git config --global user.email "panchofranco021@gmail.com"
 git config --global --list
 ```
 
