@@ -76,8 +76,8 @@ Jika nomor versi ditampilkan, Git dapat dijalankan pada komputer.
 Atur nama dan email yang akan dicatat pada commit:
 
 ```bash
-git config --global user.name "Nama Kamu"
-git config --global user.email "emailkamu@example.com"
+git config --global user.name "FransGuinaldo"
+git config --global user.email "panchofranco021@gmail.com"
 ```
 
 Periksa pengaturan dengan perintah:
