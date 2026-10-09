@@ -218,11 +218,20 @@ Praktik Git dan GitHub bertujuan menghasilkan alur kerja yang dapat diulang: mem
 
 **Catatan hasil praktik:** Lengkapi bagian ini berdasarkan hasil yang benar-benar muncul di terminal dan GitHub. Tambahkan screenshot asli, misalnya:
 
-- Gambar 2. Hasil `git --version`.
-- Gambar 3. Repository di GitHub.
-- Gambar 4. Hasil `git status`, `git add`, dan `git commit`.
-- Gambar 5. Hasil `git push` dan berkas yang tampil di GitHub.
-- Gambar 6. Branch atau pull request jika praktik tersebut dilakukan.
+- ### Gambar 2. Hasil `git --version`
+![Gambar 2](image/01/gambar-2.png)
+
+### Gambar 3. Repository di GitHub
+![Gambar 3](image/01/gambar-3.png)
+
+### Gambar 4. Hasil `git status`, `git add`, dan `git commit`
+![Gambar 4](image/01/gambar-4.png)
+
+### Gambar 5. Hasil `git push` dan berkas di GitHub
+![Gambar 5](image/01/gambar-5.png)
+
+### Gambar 6. Branch atau pull request
+![Gambar 6](image/01/gambar-6.png)
 
 Jangan menyatakan suatu langkah berhasil apabila belum dilakukan atau belum diperiksa.
 
