@@ -90,10 +90,20 @@ git config --global --list
 ### 5.3 Membuat repository di GitHub
 
 1. Masuk ke akun GitHub.
+   <img width="322" height="290" alt="gambar1" src="https://github.com/user-attachments/assets/1fe73cfc-4edb-4ff8-8755-f59b859843dc" />
+
 2. Pilih **New repository**.
+   <img width="325" height="283" alt="gambar-4" src="https://github.com/user-attachments/assets/b3e5c01d-b254-404f-9ac3-1e9eef109e47" />
+
 3. Isi nama repository, misalnya `prak-dis-dec`.
+   <img width="325" height="281" alt="gambar-5" src="https://github.com/user-attachments/assets/05f478ce-8bb0-40f3-9c37-c9c2f460cc19" />
+
 4. Tentukan akses repository (Public atau Private).
+   <img width="596" height="250" alt="gambar-7" src="https://github.com/user-attachments/assets/83803fcb-60a9-4c73-bfaf-bf93ed833bfe" />
+
 5. Klik **Create repository**.
+<img width="396" height="243" alt="gambar-6" src="https://github.com/user-attachments/assets/0ad1178d-df92-4ded-aa68-aa27912f5766" />
+
 
 ### 5.4 Clone repository ke komputer
 
