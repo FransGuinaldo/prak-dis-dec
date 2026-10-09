@@ -98,22 +98,22 @@ Anda juga bisa menggunakan editor pilihan anda sendiri selain di daftar dengan m
 
 11. Tetapkan perilaku standar dari **git pull**. Pilih default saja yaitu **Fast-forward or merge**. Arti dari hal ini akan dipelajari pada proses pembelajaran lanjutan. 
 
-![11](images/01/install-11.jpg)<img width="593" height="459" alt="image" src="https://github.com/user-attachments/assets/1af9325e-620e-4382-94b8-58f3bc127173" />
+(images/01/install-11.jpg)<img width="593" height="459" alt="image" src="https://github.com/user-attachments/assets/1af9325e-620e-4382-94b8-58f3bc127173" />
 
 
 12. Memilih **credential helper**.
 
-![12](images/01/install-12.jpg)<img width="593" height="461" alt="image" src="https://github.com/user-attachments/assets/27532f2f-7e58-4e71-a724-80d0c7a1529d" />
+(images/01/install-12.jpg)<img width="593" height="461" alt="image" src="https://github.com/user-attachments/assets/27532f2f-7e58-4e71-a724-80d0c7a1529d" />
 
 
 13. Untuk opsi ekstra, pilih serta aktifkan *file system caching*.
 
-![13](images/01/install-13.jpg)<img width="593" height="460" alt="image" src="https://github.com/user-attachments/assets/97b8bb2a-9f9f-4e8d-a6f7-fa1a6e63a3c1" />
+(images/01/install-13.jpg)<img width="593" height="460" alt="image" src="https://github.com/user-attachments/assets/97b8bb2a-9f9f-4e8d-a6f7-fa1a6e63a3c1" />
 
 
 14. Setelah itu proses instalasi akan dilakukan.
 
-![014](images/01/install-14.jpg)<img width="595" height="457" alt="image" src="https://github.com/user-attachments/assets/8e2a544d-9560-46b5-a9d1-ad7e20de32b8" />
+(images/01/install-14.jpg)<img width="595" height="457" alt="image" src="https://github.com/user-attachments/assets/8e2a544d-9560-46b5-a9d1-ad7e20de32b8" />
 
 
 15. Jika selesai akan muncul dialog pemberitahuan. Klik pada **Finish**.
