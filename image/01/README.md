@@ -32,13 +32,13 @@ Dalam pengembangan perangkat lunak, perubahan kode perlu dikelola dengan rapi ag
 
 ### 3.1 Git
 <p align="center">
- <img src="image/01/foto-1.jpg" width="200" />
+ <img src="/image/01/foto-1.jpg" width="200" />
 </p>
 Git merupakan sistem pengendalian versi terdistribusi. Git menyimpan riwayat perubahan sehingga pengguna dapat meninjau atau membandingkan versi berkas.
 
 ### 3.2 GitHub
 <p align="center">
-  <img src="image/01/Foto-2.jpg" width="200" />
+  <img src="/image/01/Foto-2.jpg" width="200" />
 </p>
 GitHub merupakan platform daring untuk meng-host repository Git. GitHub menyediakan fitur kolaborasi seperti issues, pull request, dan code review.
 
