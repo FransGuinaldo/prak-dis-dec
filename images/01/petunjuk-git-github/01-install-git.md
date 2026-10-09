@@ -38,71 +38,88 @@ Sebelum install Git di Windows, anda harus sudah mempunyai editor teks yang didu
 
 1. Setelah download Git, double click pada file yang di-download. Akan dimunculkan lisensi. Klik **Next** untuk lanjut.
 
-![01](images/01/install-01.jpg)
+![01]<img width="595" height="458" alt="image" src="https://github.com/user-attachments/assets/ff29d809-2e9e-4a19-9bed-55d261555eea" />
+
 
 2. Setelah itu, pilih lokasi instalasi. Secara default akan terisi *C:\Program Files\Git*. Ganti lokasi jika memang anda menginginkan lokasi lain, klik **Next**
 
-![02](images/01/install-02.jpg)
+![02]<img width="593" height="459" alt="image" src="https://github.com/user-attachments/assets/7854e75d-1f26-4c80-a512-5908478aad2f" />
+
 
 3. Pilih komponen. Tidak perlu diubah-ubah, sesuai dengan default saja. Klik pada **Next**.
 
-![03](images/01/install-03.jpg)
+![03]<img width="596" height="463" alt="image" src="https://github.com/user-attachments/assets/b5f41077-dc31-47a2-8dd8-1f20919c6f32" />
+
 
 4. Mengisi shortcut untuk menu Start. Gunakan default (Git), ganti jika ingin mengganti - misalnya Git VCS.
 
-![04](images/01/install-04.jpg)
+![04]<img width="593" height="461" alt="image" src="https://github.com/user-attachments/assets/5e3be426-587d-43f2-8821-219e50a59142" />
+
 
 5. Pilih editor yang akan digunakan bersama dengan Git. Pada dasarnya anda bebas menggunakan editor teks apapun. 
 
-![05-01](images/01/install-05-01.jpg)
+![05-01]<img width="596" height="460" alt="image" src="https://github.com/user-attachments/assets/28faba38-4395-4cab-aa1f-d6124d213482" />
+
 
 Beberapa editor teks yang bisa anda gunakan adalah:
 
-![05-02](images/01/install-05-02.jpg)
+![05-02]<img width="410" height="144" alt="image" src="https://github.com/user-attachments/assets/81a6cd62-66d1-49c3-a471-83278263eda3" />
+
 
 Anda juga bisa menggunakan editor pilihan anda sendiri selain di daftar dengan memilih pilihan terakhir dan kemudian mengisikan *executable file* dari editor teks yang akan digunakan.
 
-![05-03](images/01/install-05-03.jpg)
+![05-03]<img width="414" height="63" alt="image" src="https://github.com/user-attachments/assets/7418baf2-667c-4e28-bb12-6955c1939e30" />
+
 
 6. Setiap melakukan inisialisasi repo Git, suatu nama branch akan diberikan. Default nama adalah **master** tetapi umumnya sekarang diganti dengan **main**. Ubahlah konfigurasi tersebut:
 
-![06](images/01/install-06.jpg)
+![06]<img width="594" height="457" alt="image" src="https://github.com/user-attachments/assets/460fa109-a035-4a19-b52b-bb5ca14b3f96" />
+
 
 7. Pada saat instalasi, Git menyediakan akses git melalui Bash maupun command prompt. Pilih pilihan kedua supaya bisa menggunakan dari dua antarmuka tersebut. Bash adalah shell di Linux. Dengan menggunakan bash di Windows, pekerjaan di command line Windows bisa dilakukan menggunakan bash - termasuk ekskusi dari Git.
 
-![07](images/01/install-07.jpg)
+![07]<img width="594" height="459" alt="image" src="https://github.com/user-attachments/assets/0e993b5b-06ce-431a-9f29-b22a4bd54d23" />
+
 
 8. Pilih **native Windows Secure Channel library** HTTPS. Git menggunakan https untuk akes ke repo GitHub atau repo-repo lain (GitLab, Assembla).
 
-![08](images/01/install-08.jpg)
+![08]<img width="596" height="462" alt="image" src="https://github.com/user-attachments/assets/cabc98c7-256a-49e1-a58b-cef51000a0e1" />
+
 
 9. Pilih pilihan pertama untuk konversi akhir baris (CR-LF).
 
-![09](images/01/install-09.jpg)
+![09]<img width="591" height="461" alt="image" src="https://github.com/user-attachments/assets/8de9e36c-66c1-4675-afee-43dae94083fa" />
+
 
 10. Pilih MinTTY untuk terminal yang digunakan untuk mengakses Git Bash.
 
-![10](images/01/install-10.jpg)
+![10]<img width="594" height="460" alt="image" src="https://github.com/user-attachments/assets/06a91612-a0d4-44b7-bd7f-cbbd74cd8ce0" />
+
 
 11. Tetapkan perilaku standar dari **git pull**. Pilih default saja yaitu **Fast-forward or merge**. Arti dari hal ini akan dipelajari pada proses pembelajaran lanjutan. 
 
-![11](images/01/install-11.jpg)
+![11](images/01/install-11.jpg)<img width="593" height="459" alt="image" src="https://github.com/user-attachments/assets/1af9325e-620e-4382-94b8-58f3bc127173" />
+
 
 12. Memilih **credential helper**.
 
-![12](images/01/install-12.jpg)
+![12](images/01/install-12.jpg)<img width="593" height="461" alt="image" src="https://github.com/user-attachments/assets/27532f2f-7e58-4e71-a724-80d0c7a1529d" />
+
 
 13. Untuk opsi ekstra, pilih serta aktifkan *file system caching*.
 
-![13](images/01/install-13.jpg)
+![13](images/01/install-13.jpg)<img width="593" height="460" alt="image" src="https://github.com/user-attachments/assets/97b8bb2a-9f9f-4e8d-a6f7-fa1a6e63a3c1" />
+
 
 14. Setelah itu proses instalasi akan dilakukan.
 
-![014](images/01/install-14.jpg)
+![014](images/01/install-14.jpg)<img width="595" height="457" alt="image" src="https://github.com/user-attachments/assets/8e2a544d-9560-46b5-a9d1-ad7e20de32b8" />
+
 
 15. Jika selesai akan muncul dialog pemberitahuan. Klik pada **Finish**.
 
-![015](images/01/install-15.jpg)
+![015](images/01/install-15.jpg)<img width="595" height="458" alt="image" src="https://github.com/user-attachments/assets/d058a67a-729f-4908-954b-0c9038f48c93" />
+
 
 16. Untuk mencoba dari command prompt, masuk ke command prompt, setelah itu jalankan "git" untuk melihat apakah sudah terinstall atau belum. Jika sudah terinstall dengan benar, makan akan muncul hasil berikut:
 
