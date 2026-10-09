@@ -31,11 +31,11 @@ Dalam pengembangan perangkat lunak, perubahan kode perlu dikelola dengan rapi ag
 ## 3. Dasar Teori
 
 ### 3.1 Git
-
+![Foto 1](image/01/foto-1.jpg)
 Git merupakan sistem pengendalian versi terdistribusi. Git menyimpan riwayat perubahan sehingga pengguna dapat meninjau atau membandingkan versi berkas.
 
 ### 3.2 GitHub
-
+![Foto 2](image/01/Foto-2.jpg)
 GitHub merupakan platform daring untuk meng-host repository Git. GitHub menyediakan fitur kolaborasi seperti issues, pull request, dan code review.
 
 ### 3.3 Istilah penting
