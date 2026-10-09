@@ -53,6 +53,8 @@ GitHub merupakan platform daring untuk meng-host repository Git. GitHub menyedia
 - **Remote:** repository yang berada di lokasi lain, misalnya GitHub.
 - **Fork:** salinan repository ke akun GitHub sendiri.
 - **Pull request:** usulan untuk menggabungkan perubahan ke repository atau branch tujuan.
+<img width="1312" height="1199" alt="foto-3" src="https://github.com/user-attachments/assets/12bf550b-9ae4-406a-8a8f-86563143e612" />
+
 
 ## 4. Alat dan Bahan
 
