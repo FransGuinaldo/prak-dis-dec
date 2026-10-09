@@ -2,8 +2,11 @@
 ## Pengenalan Git dan GitHub
 
 **Nama:Francisco G I dc Corbafo**  
+---
 **NIM:255410003** 
+---
 **Kelas:IF-1** 
+---
 **Mata Kuliah:Praktikum Sistem Terdistribusi Dan Terdesentralisasi** 
 **Tanggal Praktikum:09 October 2026** 
 
