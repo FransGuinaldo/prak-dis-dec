@@ -236,7 +236,8 @@ Praktik Git dan GitHub bertujuan menghasilkan alur kerja yang dapat diulang: mem
 **Catatan hasil praktik:** Lengkapi bagian ini berdasarkan hasil yang benar-benar muncul di terminal dan GitHub. Tambahkan screenshot asli, misalnya:
 
 - ### Gambar 2. Hasil `git --version`
-<img width="1863" height="583" alt="gambar-2" src="https://github.com/user-attachments/assets/0d16fece-ab7c-4a84-951c-a9eb17d90619" />
+<img width="484" height="73" alt="gambar" src="https://github.com/user-attachments/assets/5589ca62-3d45-4140-b116-f82e4e793d82" />
+
 
 - ### Gambar 3. Repository di GitHub
 <img width="1087" height="642" alt="gambar-3" src="https://github.com/user-attachments/assets/39099694-68e4-4807-90c1-fab388c8b30d" />
