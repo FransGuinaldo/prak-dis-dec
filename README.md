@@ -91,7 +91,7 @@ git config --global --list
 
 1. Masuk ke akun GitHub.
 2. Pilih **New repository**.
-3. Isi nama repository, misalnya `latihan-git`.
+3. Isi nama repository, misalnya `prak-dis-dec`.
 4. Tentukan akses repository (Public atau Private).
 5. Klik **Create repository**.
 
@@ -219,19 +219,11 @@ Praktik Git dan GitHub bertujuan menghasilkan alur kerja yang dapat diulang: mem
 **Catatan hasil praktik:** Lengkapi bagian ini berdasarkan hasil yang benar-benar muncul di terminal dan GitHub. Tambahkan screenshot asli, misalnya:
 
 - ### Gambar 2. Hasil `git --version`
-![Gambar 2](image/01/gambar-2.png)
+<img width="1863" height="583" alt="gambar-2" src="https://github.com/user-attachments/assets/0d16fece-ab7c-4a84-951c-a9eb17d90619" />
 
-### Gambar 3. Repository di GitHub
-![Gambar 3](image/01/gambar-3.png)
+- ### Gambar 3. Repository di GitHub
+<img width="1087" height="642" alt="gambar-3" src="https://github.com/user-attachments/assets/39099694-68e4-4807-90c1-fab388c8b30d" />
 
-### Gambar 4. Hasil `git status`, `git add`, dan `git commit`
-![Gambar 4](image/01/gambar-4.png)
-
-### Gambar 5. Hasil `git push` dan berkas di GitHub
-![Gambar 5](image/01/gambar-5.png)
-
-### Gambar 6. Branch atau pull request
-![Gambar 6](image/01/gambar-6.png)
 
 Jangan menyatakan suatu langkah berhasil apabila belum dilakukan atau belum diperiksa.
 
