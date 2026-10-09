@@ -1,1 +1,5 @@
-
+git remote add upstream https://github.com/PEMILIK/REPO-ASLI.git
+git fetch upstream
+git switch main
+git merge upstream/main
+git push origin main
