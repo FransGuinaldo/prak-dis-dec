@@ -90,6 +90,8 @@ Langkah-langkah:
 2. Memilih proses aplikasi yang sedang berjalan.
 3. Menggunakan opsi Restart jika tersedia untuk proses tersebut.
 4. Jika opsi Restart tidak tersedia, aplikasi dapat ditutup dan dijalankan kembali sebagai alternatif untuk mengamati proses baru.
+[Restart Proses]<img width="1111" height="371" alt="foto2 4" src="https://github.com/user-attachments/assets/8c6dadcf-49b3-4f1d-b935-978132df4917" />
+
 
 #### B. Menghentikan Proses
 
