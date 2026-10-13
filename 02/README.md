@@ -77,10 +77,10 @@ Langkah-langkah:
 2. Membuka Task Manager.
 3. Mencari proses Notepad pada daftar proses.
 4. Mengamati perubahan proses setelah aplikasi dijalankan.
+[pengamatan proses menghentikan aplikas]<img width="1131" height="482" alt="foto2 2" src="https://github.com/user-attachments/assets/42fc7950-234b-4b68-98e3-d1b8b7c183d3" />
 
 **Hasil pengamatan:** Setelah aplikasi Notepad dijalankan, proses yang berkaitan dengan aplikasi tersebut dapat diamati melalui Task Manager. Hal ini menunjukkan bahwa sistem operasi mengelola aplikasi yang sedang dieksekusi sebagai proses.
 
-**Dokumentasi:** Tambahkan screenshot Notepad dan prosesnya pada Task Manager.
 
 ### 4.3 Melakukan Restart dan Menghentikan Proses
 
@@ -98,10 +98,10 @@ Langkah-langkah:
 3. Memilih proses Notepad.
 4. Menekan tombol **End task**.
 5. Memastikan aplikasi berhenti berjalan.
+[proses aplikasi yang dihentikan]<img width="1110" height="356" alt="foto2 3" src="https://github.com/user-attachments/assets/e120430e-8c35-4776-9ed7-7772636fb706" />
 
 **Hasil pengamatan:** Perintah End task digunakan untuk menghentikan proses aplikasi melalui sistem operasi tanpa menggunakan menu keluar aplikasi. Penghentian proses harus dilakukan secara hati-hati agar pekerjaan yang belum disimpan tidak hilang.
 
-**Dokumentasi:** Tambahkan screenshot sebelum dan sesudah proses dihentikan.
 
 ### 4.4 Membuat Workspace Python
 
@@ -331,12 +331,6 @@ Tambahkan screenshot asli hasil praktikum pada folder `images` di repository Git
 
 **Gambar 2. Proses aplikasi yang dijalankan**
 [Proses aplikasi]<img width="1136" height="408" alt="foto2 1" src="https://github.com/user-attachments/assets/66d9ea2d-273b-4acd-b5ad-465a284bf797" />
-
-
-**Gambar 3. Menghentikan Proses**
-1.[pengamatan proses menghentikan aplikas]<img width="1131" height="482" alt="foto2 2" src="https://github.com/user-attachments/assets/42fc7950-234b-4b68-98e3-d1b8b7c183d3" />
-
-2.[proses aplikasi yang dihentikan]<img width="1110" height="356" alt="foto2 3" src="https://github.com/user-attachments/assets/e120430e-8c35-4776-9ed7-7772636fb706" />
 
 
 **Gambar 4. GraphQL Playground**
