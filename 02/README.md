@@ -325,15 +325,15 @@ Berdasarkan praktikum yang dilakukan, proses merupakan program yang sedang dieks
 
 Tambahkan screenshot asli hasil praktikum pada folder `images` di repository GitHub.
 
-Contoh penulisan gambar dalam Markdown:
-
 **Gambar 1. Pengamatan proses komputer**
 
-![Pengamatan proses komputer](images/task-manager.png)
+![Pengamatan proses komputer](<img width="1150" height="380" alt="foto2" src="https://github.com/user-attachments/assets/b4910065-6b3d-4cc9-bd0a-abf10d5d4c0d" />
+)
 
 **Gambar 2. Proses aplikasi yang dijalankan**
 
-![Proses aplikasi](images/proses-aplikasi.png)
+![Proses aplikasi](<img width="1136" height="408" alt="foto2 1" src="https://github.com/user-attachments/assets/aed82fe6-327c-42bc-93dd-713f60e0d786" />
+)
 
 **Gambar 3. GraphQL Playground**
 
