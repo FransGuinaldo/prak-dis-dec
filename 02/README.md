@@ -326,22 +326,24 @@ Berdasarkan praktikum yang dilakukan, proses merupakan program yang sedang dieks
 Tambahkan screenshot asli hasil praktikum pada folder `images` di repository GitHub.
 
 **Gambar 1. Pengamatan proses komputer**
-
 [Pengamatan proses komputer]<img width="1150" height="380" alt="foto2" src="https://github.com/user-attachments/assets/893e64f5-7997-4b4d-8550-a8f1188b5d72" />
 
 
 **Gambar 2. Proses aplikasi yang dijalankan**
-
 [Proses aplikasi]<img width="1136" height="408" alt="foto2 1" src="https://github.com/user-attachments/assets/66d9ea2d-273b-4acd-b5ad-465a284bf797" />
 
-**Gambar 2.1 Menghentikan Proses**
 
-**Gambar 3. GraphQL Playground**
+**Gambar 3. Menghentikan Proses**
+1.[pengamatan proses menghentikan aplikas]<img width="1131" height="482" alt="foto2 2" src="https://github.com/user-attachments/assets/42fc7950-234b-4b68-98e3-d1b8b7c183d3" />
 
+2.[proses aplikasi yang dihentikan]<img width="1110" height="356" alt="foto2 3" src="https://github.com/user-attachments/assets/e120430e-8c35-4776-9ed7-7772636fb706" />
+
+
+**Gambar 4. GraphQL Playground**
 ![GraphQL Playground](images/graphql-playground.png)
 
-**Gambar 4. Hasil client Python**
 
+**Gambar 5. Hasil client Python**
 ![Hasil client Python](images/client-result.png)
 
 *Catatan: Nama dan lokasi gambar di atas merupakan contoh. Sesuaikan dengan screenshot asli yang telah diunggah ke repository.*
