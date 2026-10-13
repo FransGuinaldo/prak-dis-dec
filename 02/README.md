@@ -327,13 +327,14 @@ Tambahkan screenshot asli hasil praktikum pada folder `images` di repository Git
 
 **Gambar 1. Pengamatan proses komputer**
 
-![Pengamatan proses komputer]<img width="1150" height="380" alt="foto2" src="https://github.com/user-attachments/assets/893e64f5-7997-4b4d-8550-a8f1188b5d72" />
+[Pengamatan proses komputer]<img width="1150" height="380" alt="foto2" src="https://github.com/user-attachments/assets/893e64f5-7997-4b4d-8550-a8f1188b5d72" />
 
 
 **Gambar 2. Proses aplikasi yang dijalankan**
 
-![Proses aplikasi]<img width="1136" height="408" alt="foto2 1" src="https://github.com/user-attachments/assets/66d9ea2d-273b-4acd-b5ad-465a284bf797" />
+[Proses aplikasi]<img width="1136" height="408" alt="foto2 1" src="https://github.com/user-attachments/assets/66d9ea2d-273b-4acd-b5ad-465a284bf797" />
 
+**Gambar 2.1 Menghentikan Proses**
 
 **Gambar 3. GraphQL Playground**
 
