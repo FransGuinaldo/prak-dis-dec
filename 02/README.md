@@ -340,10 +340,12 @@ Tambahkan screenshot asli hasil praktikum pada folder `images` di repository Git
 
 
 **Gambar 4. GraphQL Playground**
+
 ![GraphQL Playground](images/graphql-playground.png)
 
 
 **Gambar 5. Hasil client Python**
+
 ![Hasil client Python](images/client-result.png)
 
 *Catatan: Nama dan lokasi gambar di atas merupakan contoh. Sesuaikan dengan screenshot asli yang telah diunggah ke repository.*
