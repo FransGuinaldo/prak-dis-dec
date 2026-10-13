@@ -77,6 +77,7 @@ Langkah-langkah:
 2. Membuka Task Manager.
 3. Mencari proses Notepad pada daftar proses.
 4. Mengamati perubahan proses setelah aplikasi dijalankan.
+   
 [pengamatan proses menghentikan aplikas]<img width="1131" height="482" alt="foto2 2" src="https://github.com/user-attachments/assets/42fc7950-234b-4b68-98e3-d1b8b7c183d3" />
 
 **Hasil pengamatan:** Setelah aplikasi Notepad dijalankan, proses yang berkaitan dengan aplikasi tersebut dapat diamati melalui Task Manager. Hal ini menunjukkan bahwa sistem operasi mengelola aplikasi yang sedang dieksekusi sebagai proses.
@@ -90,6 +91,7 @@ Langkah-langkah:
 2. Memilih proses aplikasi yang sedang berjalan.
 3. Menggunakan opsi Restart jika tersedia untuk proses tersebut.
 4. Jika opsi Restart tidak tersedia, aplikasi dapat ditutup dan dijalankan kembali sebagai alternatif untuk mengamati proses baru.
+   
 [Restart Proses]<img width="1111" height="371" alt="foto2 4" src="https://github.com/user-attachments/assets/8c6dadcf-49b3-4f1d-b935-978132df4917" />
 
 
@@ -100,6 +102,7 @@ Langkah-langkah:
 3. Memilih proses Notepad.
 4. Menekan tombol **End task**.
 5. Memastikan aplikasi berhenti berjalan.
+   
 [proses aplikasi yang dihentikan]<img width="1110" height="356" alt="foto2 3" src="https://github.com/user-attachments/assets/e120430e-8c35-4776-9ed7-7772636fb706" />
 
 **Hasil pengamatan:** Perintah End task digunakan untuk menghentikan proses aplikasi melalui sistem operasi tanpa menggunakan menu keluar aplikasi. Penghentian proses harus dilakukan secara hati-hati agar pekerjaan yang belum disimpan tidak hilang.
