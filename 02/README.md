@@ -65,7 +65,7 @@ Contoh tabel pengamatan:
 | 1 | Google Chrome | Proses aplikasi browser. |
 | 2 | File Explorer | Proses pengelolaan file pada Windows. |
 | 3 | Visual Studio Code | Proses aplikasi editor kode jika sedang dijalankan. |
-| 4 | [Nama proses] | [Keterangan hasil pengamatan]. |
+| 4 | Task Manager | proses memantau performa dan mengelola seluruh aktivitas di windows. |
 
 **Dokumentasi:** Tambahkan screenshot Task Manager yang menunjukkan proses pada komputer.
 
