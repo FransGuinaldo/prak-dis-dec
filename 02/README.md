@@ -347,7 +347,6 @@ Tambahkan screenshot asli hasil praktikum pada folder `images` di repository Git
 
 ![Hasil client Python](images/client-result.png)
 
-*Catatan: Nama dan lokasi gambar di atas merupakan contoh. Sesuaikan dengan screenshot asli yang telah diunggah ke repository.*
 
 ## 8. REFERENSI
 
