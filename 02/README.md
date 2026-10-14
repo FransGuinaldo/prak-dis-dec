@@ -345,7 +345,8 @@ Tambahkan screenshot asli hasil praktikum pada folder `images` di repository Git
 
 **Gambar 5. Hasil client Python**
 
-![Hasil client Python](images/client-result.png)
+![Hasil client Python]<img width="1136" height="491" alt="foto3 1" src="https://github.com/user-attachments/assets/13bfae1f-2915-45de-8ae0-91d6ce1f2a19" />
+
 
 
 ## 8. REFERENSI
