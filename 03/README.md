@@ -63,7 +63,9 @@ Untuk membandingkan hasil program dengan cara manual:
 Dua kejadian dapat dibandingkan berdasarkan nilai vector clock-nya. Jika semua komponen clock A kurang dari atau sama dengan clock B dan setidaknya satu komponen lebih kecil, A terjadi sebelum B. Jika tidak ada hubungan seperti itu, kedua kejadian bersifat konkuren.
 
 ### Modul `VectorClock` dan Contoh Penggunaan
-<img width="645" height="476" alt="image" src="https://github.com/user-attachments/assets/62527f7e-07a6-42a6-a8e0-803098acb393" /> 
+<img width="645" height="476" alt="image" src="https://github.com/user-attachments/assets/62527f7e-07a6-42a6-a8e0-803098acb393" /> <img width="635" height="610" alt="image" src="https://github.com/user-attachments/assets/babb6d9d-cf86-4fd9-a98c-5f8c97f3d4e0" />
+<img width="570" height="287" alt="modikasi python vclocks3 py" src="https://github.com/user-attachments/assets/c23e99bf-2a76-4ae4-8887-0939eafecf94" />
+
 
 
 ---
