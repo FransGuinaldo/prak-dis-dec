@@ -2,6 +2,7 @@
 ## Sinkronisasi pada Sistem Terdistribusi
 
 **Nama:** Francisco G I dc Corbafo
+
 **NIM:** 255410003  
 **Kelas:** IF-1  
 **Mata Kuliah:** Praktikum Sistem Terdistribusi dan Terdesentralisasi  
