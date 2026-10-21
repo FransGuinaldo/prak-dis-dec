@@ -1,10 +1,10 @@
-**LAPORAN PRAKTIKUM MODUL 3**
-**Sinkronisasi pada Sistem Terdistribusi**
-**Nama: Francisco G I dc Corbafo**
-**NIM: 255410003**
-**Kelas: IF-1**
-**Mata Kuliah: Praktikum Sistem Terdistribusi dan Terdesentralisasi**
-**Tanggal Praktikum: 21 Oktober 2026**
+|**LAPORAN PRAKTIKUM MODUL 3**|
+|**Sinkronisasi pada Sistem Terdistribusi**|
+|**Nama: Francisco G I dc Corbafo**|
+|**NIM: 255410003**|
+|**Kelas: IF-1**|
+|**Mata Kuliah: Praktikum Sistem Terdistribusi dan Terdesentralisasi**
+**Tanggal Praktikum: 21 Oktober 2026**|
 
 3.1 Sinkronisasi Waktu
 Tujuan
