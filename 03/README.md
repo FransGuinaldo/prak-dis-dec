@@ -50,8 +50,7 @@ Memahami penggunaan *vector clock* untuk membandingkan urutan kejadian (*event*)
 5. Buat modul Python yang berisi kelas `VectorClock`, lalu buat program contoh yang menggunakan modul tersebut.
 
 ### Hasil Program
-<img width="563" height="852" alt="image" src="https://github.com/user-attachments/assets/9fa2c8b6-c1dd-4e2a-a42e-da2f7b458058" /> 
-
+<img width="563" height="852" alt="image" src="https://github.com/user-attachments/assets/9fa2c8b6-c1dd-4e2a-a42e-da2f7b458058" /> <img width="448" height="535" alt="image" src="https://github.com/user-attachments/assets/7ffebc52-3d48-4465-8688-7f8e28c904b3" />
 
 ### Pembahasan
 Vector clock menyimpan penghitung untuk setiap proses. Secara umum, ketika suatu proses melakukan kejadian lokal, nilai penghitung milik proses tersebut bertambah. Saat mengirim pesan, proses menyertakan vector clock-nya. Ketika menerima pesan, proses menggabungkan informasi clock yang diterima dengan clock miliknya menggunakan nilai maksimum pada setiap posisi, lalu menambah penghitung proses penerima sesuai aturan algoritmanya.
