@@ -1,5 +1,4 @@
-**LAPORAN PRAKTIKUM MODUL 3**
-**Sinkronisasi pada Sistem Terdistribusi**
+**LAPORAN PRAKTIKUM MODUL 3**|**Sinkronisasi pada Sistem Terdistribusi**
 **Nama: Francisco G I dc Corbafo**
 **NIM: 255410003**
 **Kelas: IF-1**
