@@ -23,7 +23,8 @@ Memahami proses sinkronisasi waktu komputer menggunakan protokol NTP (*Network T
 5. Mengamati hasil sinkronisasi dan mencatat pesan yang ditampilkan aplikasi.
 
 ### Hasil dan Pembahasan
-**Tempelkan tangkapan layar NetTime setelah proses sinkronisasi di sini.**
+<img width="878" height="633" alt="nettime png" src="https://github.com/user-attachments/assets/80655a6c-fc73-402f-b7b2-b34b05efcd0a" />
+
 
 NetTime menyelaraskan waktu komputer dengan waktu dari server NTP melalui jaringan. Komputer meminta informasi waktu dari server, kemudian aplikasi menyesuaikan waktu komputer berdasarkan hasil tersebut. Sinkronisasi waktu penting agar pencatatan waktu pada beberapa komputer lebih konsisten.
 
