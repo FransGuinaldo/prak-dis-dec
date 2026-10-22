@@ -191,6 +191,7 @@ Memahami secara sederhana proses pemilihan koordinator (*leader*) pada algoritma
 4. Pisahkan implementasi Raft menjadi modul Python dan buat program contoh yang mengimpor serta menggunakan modul tersebut.
 
 ### Hasil Program
+
 import random
 import time
 from enum import Enum
@@ -261,7 +262,6 @@ class RaftNode:
             self.election_timeout = self._random_timeout()
             self.start_election()
 
-
 def simulate_raft():
     node_ids = [1, 2, 3]
     nodes = [RaftNode(i, node_ids) for i in node_ids]
@@ -289,7 +289,6 @@ def simulate_raft():
         # Print status
         for node in nodes:
             print(f"Node {node.id}: {node.state.name} | Term {node.current_term} | Log len {len(node.log)}")
-
 
 if __name__ == "__main__":
     print(" Simulating Raft Consensus for Drone Swarm Coordination\n")
