@@ -192,11 +192,11 @@ Memahami secara sederhana proses pemilihan koordinator (*leader*) pada algoritma
 
 ### Hasil Program
 
+<img width="696" height="834" alt="raft py4" src="https://github.com/user-attachments/assets/89e77056-fc92-434c-a045-73f31c8444bf" />
 
+<img width="761" height="859" alt="raft5 py" src="https://github.com/user-attachments/assets/665745e5-feba-4742-a68c-97b2b79a1cf0" />
 
 <img width="614" height="752" alt="image" src="https://github.com/user-attachments/assets/3232c285-f52e-4073-b4e3-45ce9e8445e2" /> <img width="376" height="733" alt="raft 2py" src="https://github.com/user-attachments/assets/1ae145e2-c3ff-45c3-9abd-14edb6f0fe97" /> <img width="530" height="477" alt="raft 3py" src="https://github.com/user-attachments/assets/ff63930e-a880-4d6e-8d07-6b901960fc75" />
-
-
 
 ### Pembahasan
 Secara sederhana, dalam Raft setiap node dapat berada dalam keadaan follower, candidate, atau leader. Jika follower tidak menerima tanda bahwa leader masih aktif selama batas waktu tertentu, node tersebut dapat menjadi candidate dan memulai pemilihan dengan meminta suara dari node lain. Candidate yang memperoleh suara mayoritas menjadi leader untuk term tersebut. Leader kemudian mengoordinasikan operasi sesuai protokol.
