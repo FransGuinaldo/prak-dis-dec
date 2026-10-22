@@ -301,11 +301,6 @@ if __name__ == "__main__":
 ### Pembahasan
 Secara sederhana, dalam Raft setiap node dapat berada dalam keadaan follower, candidate, atau leader. Jika follower tidak menerima tanda bahwa leader masih aktif selama batas waktu tertentu, node tersebut dapat menjadi candidate dan memulai pemilihan dengan meminta suara dari node lain. Candidate yang memperoleh suara mayoritas menjadi leader untuk term tersebut. Leader kemudian mengoordinasikan operasi sesuai protokol.
 
-Sesuaikan urutan penjelasan dan gambar dengan keluaran `raft.py` yang dijalankan, karena detail simulasi bergantung pada implementasi program.
-
-### Modul Python dan Contoh Simulasi
-**Tempelkan struktur file, kode modul, kode program contoh, dan tangkapan layar hasil eksekusi di sini.** Pastikan program contoh benar-benar mengimpor modul yang dibuat, bukan hanya menjalankan kembali file `raft.py` secara langsung.
-
 ---
 
 ## Kesimpulan
@@ -313,16 +308,3 @@ Sesuaikan urutan penjelasan dan gambar dengan keluaran `raft.py` yang dijalankan
 Praktikum ini membahas sinkronisasi waktu, penggunaan vector clock untuk memahami urutan kejadian, serta dampak kurangnya sinkronisasi pada program multithread. Data race dapat menghasilkan perubahan data yang tidak terduga, sedangkan deadlock dapat membuat thread saling menunggu. Praktikum juga memperkenalkan algoritma Raft untuk memilih leader dalam sistem terdistribusi. Kesimpulan akhir perlu disesuaikan dengan hasil eksekusi dan bukti praktikum yang benar-benar diperoleh.
 
 ---
-
-## Daftar Bukti Praktikum
-
-- [ ] Tangkapan layar NetTime setelah sinkronisasi NTP.
-- [ ] Keluaran `vclocks.py` dan perbandingan perhitungan manual.
-- [ ] Kode modul `VectorClock` dan contoh penggunaannya.
-- [ ] Keluaran multithread yang berbeda pada beberapa percobaan.
-- [ ] Keluaran `race-conditions-01.py` dan foto visualisasi manual.
-- [ ] Keluaran `race-conditions-02.py`.
-- [ ] Keluaran `deadlock-01.py` dan foto visualisasi manual.
-- [ ] Keluaran `deadlock-02.py`.
-- [ ] Keluaran `raft.py` dan foto visualisasi manual pemilihan leader.
-- [ ] Modul Python Raft, contoh simulasi, dan bukti eksekusinya.
