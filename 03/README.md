@@ -89,7 +89,8 @@ python multithreads-example.py
 ```
 
 ### Hasil Program
-**Tempelkan tangkapan layar dari dua atau lebih percobaan yang hasilnya berbeda di sini.**
+<img width="537" height="827" alt="image" src="https://github.com/user-attachments/assets/676568b6-0426-4fbe-927c-2257adf2d4fb" />
+
 
 ### Pembahasan
 Thread dapat berjalan secara berselang-seling. Urutan keluaran dipengaruhi oleh penjadwalan sistem operasi dan waktu pelaksanaan setiap thread. Karena itu, urutan pesan yang tampil tidak selalu sama pada setiap percobaan. Jika keluaran program ternyata selalu sama, ulangi percobaan dan jelaskan hasil yang benar-benar diperoleh.
