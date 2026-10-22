@@ -111,8 +111,7 @@ python race-conditions-01.py
 Amati keluaran program dan buat visualisasi manual menggunakan pensil atau ballpoint, kemudian foto hasil gambar tersebut.
 
 #### Hasil Program
-**Tempelkan tangkapan layar keluaran program di sini.**  
-**Tempelkan foto visualisasi manual di sini.**
+<img width="612" height="593" alt="image" src="https://github.com/user-attachments/assets/2b87528c-0fb8-4c42-9b77-0f50a2cc2c21" />
 
 #### Pembahasan
 Data race dapat terjadi ketika beberapa thread mengakses data yang sama secara bersamaan, setidaknya salah satunya mengubah data, dan akses tersebut tidak dilindungi sinkronisasi yang sesuai. Urutan operasi dapat saling menyela sehingga hasil akhirnya tidak sesuai dengan yang diharapkan. Pada visualisasi, gambarkan urutan operasi thread yang mengakses atau mengubah data bersama berdasarkan source code yang digunakan.
