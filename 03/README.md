@@ -294,6 +294,9 @@ if __name__ == "__main__":
     print(" Simulating Raft Consensus for Drone Swarm Coordination\n")
     simulate_raft()
 
+<img width="614" height="752" alt="image" src="https://github.com/user-attachments/assets/3232c285-f52e-4073-b4e3-45ce9e8445e2" /> <img width="376" height="733" alt="raft 2py" src="https://github.com/user-attachments/assets/1ae145e2-c3ff-45c3-9abd-14edb6f0fe97" /> <img width="530" height="477" alt="raft 3py" src="https://github.com/user-attachments/assets/ff63930e-a880-4d6e-8d07-6b901960fc75" />
+
+
 
 ### Pembahasan
 Secara sederhana, dalam Raft setiap node dapat berada dalam keadaan follower, candidate, atau leader. Jika follower tidak menerima tanda bahwa leader masih aktif selama batas waktu tertentu, node tersebut dapat menjadi candidate dan memulai pemilihan dengan meminta suara dari node lain. Candidate yang memperoleh suara mayoritas menjadi leader untuk term tersebut. Leader kemudian mengoordinasikan operasi sesuai protokol.
