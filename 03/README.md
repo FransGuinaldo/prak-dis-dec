@@ -149,8 +149,8 @@ python deadlock-01.py
 Amati perilaku program. Jika program berhenti menunggu dan tidak selesai, catat kondisi tersebut. Jangan menunggu tanpa batas; hentikan proses dari terminal jika diperlukan.
 
 #### Hasil Program
-**Tempelkan tangkapan layar keluaran atau kondisi program yang macet di sini.**  
-**Tempelkan foto visualisasi manual di sini.**
+<img width="659" height="701" alt="deadlock-01 py" src="https://github.com/user-attachments/assets/9b857dff-b517-43e6-a33b-a3a1b1f06fc1" />
+
 
 #### Pembahasan
 Deadlock adalah keadaan ketika beberapa thread atau proses saling menunggu sumber daya yang dipegang pihak lain sehingga tidak ada yang dapat melanjutkan. Pada visualisasi manual, gambarkan thread/proses, sumber daya atau lock yang dipegang, dan sumber daya yang sedang ditunggu. Gunakan urutan sesuai source code.
@@ -167,7 +167,7 @@ python deadlock-02.py
 Amati keluaran program dan bandingkan dengan `deadlock-01.py`.
 
 #### Hasil Program
-**Tempelkan tangkapan layar keluaran program di sini.**
+<img width="435" height="847" alt="deadlock-02 py" src="https://github.com/user-attachments/assets/647e4fd2-3bd6-494c-b9a2-3ff2c0c34da3" />
 
 #### Pembahasan
 Jelaskan perubahan pada program kedua yang mencegah deadlock. Penyebab pastinya harus merujuk pada source code—misalnya, urutan pengambilan lock yang konsisten atau mekanisme penguncian yang berbeda, jika memang digunakan oleh program tersebut.
