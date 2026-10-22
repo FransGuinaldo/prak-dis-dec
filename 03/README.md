@@ -128,7 +128,7 @@ python race-conditions-02.py
 Amati keluaran program.
 
 #### Hasil Program
-**Tempelkan tangkapan layar keluaran program di sini.**
+<img width="906" height="710" alt="image" src="https://github.com/user-attachments/assets/f409c47b-df33-4e70-aed7-216c1857b057" />
 
 #### Pembahasan
 Jelaskan mekanisme pada source code yang mencegah akses bermasalah terhadap data bersama. Jika program menggunakan lock atau mekanisme sinkronisasi lain, jelaskan bagaimana mekanisme tersebut memastikan bagian kode yang mengakses data bersama dijalankan secara terkendali. Cocokkan penjelasan dengan kode yang benar-benar digunakan.
