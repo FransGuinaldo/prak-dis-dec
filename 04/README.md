@@ -280,4 +280,3 @@ $ dcd
 ```
 
 ---
-*Laporan praktikum ini disusun dan dikerjakan secara mandiri sebagai bentuk pemenuhan tugas Modul 4 Praktikum Sistem Terdistribusi dan Terdesentralisasi.*
