@@ -1,11 +1,14 @@
-Laporan Praktikum Modul 4
-Konsistensi dan Replikasi pada Sistem Terdistribusi
+**Laporan Praktikum Modul 4**
+**Konsistensi dan Replikasi pada Sistem Terdistribusi**
 	
-Mata Kuliah	Sistem Terdistribusi dan Terdesentralisasi
-Nama	(isi nama)
-NIM	(isi NIM)
-Kelas	(isi kelas)
-Tanggal	(isi tanggal praktikum)
+**Mata Kuliah	Sistem Terdistribusi dan Terdesentralisasi**
+
+Nama : Francisco G I dc Corbafo
+
+NIM : 255410003
+
+Kelas : IF-1
+
 
 
 Catatan: Tempat tangkapan layar ditandai dengan ![...](img/xxx.png). Ganti dengan screenshot hasil pengerjaan Anda sendiri, simpan di folder img/ pada repo.
@@ -26,16 +29,24 @@ Daftar Isi
 3. Menguji propagasi data dari primary ke replica, serta simulasi High Availability dengan promosi replica (pg_promote()).
 4. Mengonfigurasi cluster Apache Ignite 3.1.0 tiga node dan menguji replikasi data antar-node (model "master-master").
 5. Membandingkan kedua pendekatan replikasi.
+
+   
 2. Landasan Teori Singkat
 Replikasi adalah penyimpanan salinan data yang sama pada beberapa node. Manfaatnya: ketersediaan tinggi (high availability), toleransi kegagalan, dan peningkatan kinerja baca. Konsekuensinya: harus ada mekanisme menjaga konsistensi antar salinan.
+
+
 2.1 Streaming Replication PostgreSQL
 - Model single-primary: hanya satu server (primary) menerima operasi tulis; replica (standby) menerima dan memutar ulang (replay) WAL (Write-Ahead Log) dari primary secara kontinu, dan hanya melayani baca (hot standby).
 - Mode yang dipakai pada modul ini asinkron (sync_state = async): primary tidak menunggu konfirmasi replica sebelum commit. Artinya replica bisa tertinggal sesaat (replication lag) → konsistensi bersifat eventual pada sisi replica.
 - Replication slot memastikan primary menyimpan WAL sampai dikonsumsi replica, sehingga replica tidak kehilangan data walau sempat terputus.
+
+
 2.2 Apache Ignite 3
 - Basis data terdistribusi berbentuk cluster beberapa node. Data dibagi menjadi partisi dan direplikasi antar node menggunakan konsensus Raft.
 - Klien dapat terhubung ke node mana pun dalam cluster untuk menjalankan operasi baca/tulis. Istilah "master-master" pada laporan ini digunakan secara sederhana; secara teknis, tiap partisi tetap memiliki satu leader Raft dan node lain dapat meneruskan operasi ke leader tersebut.
 - Zone menentukan strategi distribusi data (jumlah partisi dan replika). Pada dataset contoh terdapat zone CHINOOK dan CHINOOKREPLICATED.
+
+  
 3. Alat dan Prasyarat
 Komponen	Keterangan
 Sistem operasi	Linux (jika OS lain, sesuaikan perintah)
