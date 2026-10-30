@@ -236,7 +236,8 @@ INSERT 0 1
 (2 rows)
 ```
 
-![Create dan insert di primary](img/08-primary-create-insert.png)
+<img width="439" height="581" alt="image" src="https://github.com/user-attachments/assets/ca19e906-2679-4eae-a424-b266a4a0e7c9" />
+
 
 Di **replica**, tanpa mengisi apa pun:
 
@@ -274,7 +275,8 @@ dps
 
 `dps` kini hanya menampilkan container replica.
 
-![Primary dihentikan](img/10-stop-primary.png)
+<img width="439" height="581" alt="image" src="https://github.com/user-attachments/assets/f9049365-fdc6-47e5-b981-df6ae9897689" />
+
 
 Di replica:
 
