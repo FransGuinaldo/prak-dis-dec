@@ -66,7 +66,8 @@ streaming-replication/
 
 **Cara kerja replica:** saat start, replica menjalankan `pg_basebackup` dari primary (`-R` membuat konfigurasi standby, `--slot` memakai slot replikasi, `-X stream` ikut mengalirkan WAL), diulang tiap 5 detik sampai primary siap, lalu menjalankan `postgres` dalam mode standby.
 
-![Isi tiga file](img/01-struktur-file.png)
+<img width="768" height="812" alt="image" src="https://github.com/user-attachments/assets/adbc5ebf-aba0-4daf-9cf4-ce79b5de9376" />
+
 
 ```
 -rw-r--r-- 1 frans frans  146 Oct 30 08:31 00_init.sql
