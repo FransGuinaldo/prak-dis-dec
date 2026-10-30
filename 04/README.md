@@ -1,42 +1,43 @@
-# Laporan Praktikum Modul 4: Konsistensi dan Replikasi pada Sistem Terdistribusi
+# Laporan Praktikum Modul 4
+## Konsistensi dan Replikasi pada Sistem Terdistribusi
 
 | | |
 |---|---|
-| **Nama** | Francisco G I dc Corbafp |
-| **NIM** | _255410003_ |
+| **Nama** | Francisco G I dc Corbafo |
+| **NIM** | 255410003|
 | **Mata kuliah** | Sistem Terdistribusi dan Terdesentralisasi |
+| **Tanggal praktikum** | 30 Oktober 2026 |
+
 
 ---
 
 ## 1. Tujuan
 
-1. Mengonfigurasi *streaming replication* (primary-replica) pada PostgreSQL 18 memakai Docker Compose.
+1. Mengonfigurasi *streaming replication* PostgreSQL 18 (primary-replica) dengan Docker Compose.
 2. Menguji replikasi data dan simulasi *High Availability* (failover) dengan `pg_promote()`.
-3. Mengonfigurasi cluster Apache Ignite 3.1.0 dengan 3 node dan menguji replikasi data antar node (Master-Master).
+3. Mengonfigurasi cluster Apache Ignite 3.1.0 dengan 3 node dan menguji replikasi antar node (Master-Master).
 
 ## 2. Lingkungan
 
 | Komponen | Keterangan |
 |---|---|
 | Sistem operasi | Windows dengan WSL 2 (Ubuntu) |
-| Terminal | Terminal VS Code (Bash di WSL Ubuntu) |
-| Docker | Docker Engine 29.1.3, Docker Compose v5.6.1 (Docker Desktop) |
+| Terminal | Terminal VS Code (Bash, WSL Ubuntu) |
+| Docker | Docker 29.1.3, Docker Compose v5.6.1 (Docker Desktop) |
 | Image PostgreSQL | `postgres:18.3-alpine3.23` |
 | Image Ignite | `apacheignite/ignite:3.1.0` |
 
-[Versi Docker dan Docker Compose]
-
-<img width="878" height="838" alt="image" src="https://github.com/user-attachments/assets/a2f3b024-fd67-4c52-9b0e-bbcd6c820106" />
+![Versi Docker](img/00-versi-docker.png)
 
 ---
 
 ## 3. Bagian 4.1: Streaming Replication PostgreSQL
 
-### 3.1 Konsep singkat
+### 3.1 Konsep
 
-*Streaming replication* mengirim catatan perubahan (WAL, *Write-Ahead Log*) dari server **primary** ke server **replica (standby)** secara terus-menerus. Primary melayani baca-tulis, sedangkan replica hanya melayani baca (*hot standby*). Pada praktikum ini mode replikasi adalah **asynchronous** (`sync_state = async`): primary tidak menunggu konfirmasi replica sebelum menyelesaikan transaksi, sehingga lebih cepat tetapi ada kemungkinan replica tertinggal sesaat.
+*Streaming replication* mengirim catatan perubahan (WAL, *Write-Ahead Log*) dari **primary** ke **replica (standby)** secara kontinu. Primary melayani baca-tulis, replica hanya baca (*hot standby*). Mode yang dipakai adalah **asinkron**: primary tidak menunggu konfirmasi replica, sehingga cepat, tetapi replica dapat tertinggal sesaat.
 
-### 3.2 Struktur direktori dan file
+### 3.2 File yang dipakai
 
 ```
 streaming-replication/
@@ -47,27 +48,30 @@ streaming-replication/
 
 | File | Fungsi |
 |---|---|
-| `00_init.sql` | Dijalankan otomatis saat primary pertama kali diinisialisasi. Membuat user `replicator` dengan hak replikasi dan *replication slot* fisik `replication_slot`. |
-| `docker-compose.yaml` | Mendefinisikan dua service: `postgres_primary` dan `postgres_replica`. |
-| `env.sh` | Kumpulan alias Bash (`dcu`, `dcd`, `dps`, `der`, `dep`, `dlr`, `dlp`) untuk mempersingkat perintah. Pada praktikum ini `sudo` dihapus dan `docker-compose` diganti `docker compose`, karena memakai Docker Desktop. |
+| `00_init.sql` | Dijalankan saat primary pertama kali diinisialisasi: membuat user `replicator` dan *replication slot* `replication_slot`. |
+| `docker-compose.yaml` | Mendefinisikan `postgres_primary` dan `postgres_replica`. |
+| `env.sh` | Alias Bash (`dcu`, `dcd`, `dps`, `der`, `dep`, `dlr`, `dlp`). `sudo` dihapus dan `docker-compose` diganti `docker compose` karena memakai Docker Desktop. |
 
-**Parameter penting pada primary:**
+**Parameter penting primary:**
 
 | Parameter | Fungsi |
 |---|---|
 | `wal_level=replica` | Menyimpan informasi WAL yang cukup untuk replikasi. |
-| `hot_standby=on` | Mengizinkan replica menerima koneksi baca saat berstatus standby. |
+| `hot_standby=on` | Replica dapat dibaca saat standby. |
 | `max_wal_senders=10` | Jumlah maksimum proses pengirim WAL. |
 | `max_replication_slots=10` | Jumlah maksimum slot replikasi. |
-| `hot_standby_feedback=on` | Replica memberi tahu primary baris mana yang masih dipakai, agar tidak dibersihkan terlalu dini. |
-| `POSTGRES_HOST_AUTH_METHOD` | Mengatur `pg_hba.conf`: autentikasi `scram-sha-256`, ditambah aturan koneksi replikasi untuk user `replicator`. |
+| `hot_standby_feedback=on` | Replica memberi tahu primary baris yang masih dipakai agar tidak dibersihkan dini. |
+| `POSTGRES_HOST_AUTH_METHOD` | Autentikasi `scram-sha-256` dan aturan koneksi replikasi untuk `replicator`. |
 
-**Cara kerja replica:** saat start, replica menjalankan `pg_basebackup` dari primary (`-R` membuat file konfigurasi standby, `--slot` memakai slot replikasi, `-X stream` ikut mengalirkan WAL). Perintah diulang tiap 5 detik sampai primary siap, baru kemudian `postgres` dijalankan dalam mode standby.
+**Cara kerja replica:** saat start, replica menjalankan `pg_basebackup` dari primary (`-R` membuat konfigurasi standby, `--slot` memakai slot replikasi, `-X stream` ikut mengalirkan WAL), diulang tiap 5 detik sampai primary siap, lalu menjalankan `postgres` dalam mode standby.
 
-[Isi tiga file dan ls -la]
+![Isi tiga file](img/01-struktur-file.png)
 
-<img width="768" height="812" alt="image" src="https://github.com/user-attachments/assets/23608496-053c-47fe-92fc-aabe1cd3b6cb" />
-
+```
+-rw-r--r-- 1 frans frans  146 Oct 30 08:31 00_init.sql
+-rw-r--r-- 1 frans frans 1417 Oct 30 08:31 docker-compose.yaml
+-rw-r--r-- 1 frans frans  365 Oct 30 08:31 env.sh
+```
 
 ### 3.3 Menjalankan docker compose
 
@@ -77,7 +81,13 @@ dcu
 dps
 ```
 
-Pada percobaan pertama, replica gagal start dengan galat `failed to bind host port 0.0.0.0:5433/tcp: address already in use`. Port 5433 di komputer sudah dipakai proses lain, sehingga port host replica diubah ke **5434**:
+Percobaan pertama gagal untuk replica:
+
+```
+Error response from daemon: failed to set up container networking: ... failed to bind host port 0.0.0.0:5433/tcp: address already in use
+```
+
+Port 5433 di komputer host sudah dipakai proses lain. Port host replica diubah menjadi **5434**:
 
 ```bash
 sed -i 's/- 5433:5432/- 5434:5432/' docker-compose.yaml
@@ -85,13 +95,19 @@ dcd
 dcu
 ```
 
-Perubahan ini hanya memengaruhi port yang dipetakan ke komputer host. Replica tetap terhubung ke primary lewat jaringan internal Docker (`postgres_primary:5432`), sehingga replikasi tidak terpengaruh.
+Perubahan ini hanya memengaruhi port yang dipetakan ke host. Replica tetap terhubung ke primary lewat jaringan internal Docker (`postgres_primary:5432`), sehingga replikasi tidak terpengaruh.
 
-![Galat port 5433 bentrok](img/02-error-port-5433.png)
-*Screenshot: pesan galat `address already in use` saat `dcu` pertama.*
+![Galat port 5433](img/02-error-port-5433.png)
 
-![dcu berhasil dan dps healthy](img/03-dcu-dps-healthy.png)
-*Screenshot: output `dcu` dan `dps` dengan kedua container berstatus `(healthy)`, port 5432 dan 5434.*
+Setelah itu kedua container berstatus `healthy`:
+
+```
+NAMES                                      STATUS                        PORTS
+streaming-replication-postgres_replica-1   Up About a minute (healthy)   0.0.0.0:5434->5432/tcp
+streaming-replication-postgres_primary-1   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp
+```
+
+![dcu dan dps healthy](img/03-dcu-dps-healthy.png)
 
 ### 3.4 Log replica
 
@@ -99,57 +115,95 @@ Perubahan ini hanya memengaruhi port yang dipetakan ke komputer host. Replica te
 dlr
 ```
 
-Log menampilkan galat `Connection refused` di awal. Ini normal karena replica mencoba terhubung sebelum primary siap, lalu mengulang. Setelah primary siap muncul `Backup done, starting replica...`, `entering standby mode`, `database system is ready to accept read-only connections`, dan `started streaming WAL from primary at 0/3000000 on timeline 1`.
+Cuplikan penting:
 
-![Log replica](img/04-log-replica.png)
-*Screenshot: output `dlr`.*
-
-### 3.5 Pengujian status replikasi
-
-**Pada primary** (`dep`, lalu `psql -U zuser -d zdb`):
-
-```sql
-\x
-SELECT * FROM pg_stat_replication;
-SELECT * FROM pg_replication_slots;
-\x
-\dt
+```
+pg_basebackup: error: connection to server at "postgres_primary" (172.20.0.2), port 5432 failed: Connection refused
+pg_basebackup failed. Retrying in 5 seconds ...
+Backup done, starting replica...
+... LOG:  entering standby mode
+... LOG:  database system is ready to accept read-only connections
+... LOG:  started streaming WAL from primary at 0/3000000 on timeline 1
 ```
 
-Hasil penting:
+Galat `Connection refused` di awal wajar: replica sempat mencoba terhubung sebelum primary siap, lalu mengulang sampai berhasil.
 
-| Kolom | Nilai | Arti |
-|---|---|---|
-| `usename` | `replicator` | Replica terhubung memakai user replikasi. |
-| `application_name` | `walreceiver` | Proses penerima WAL di replica. |
-| `client_addr` | `172.20.0.3` | Alamat IP container replica di jaringan Docker. |
-| `state` | `streaming` | WAL sedang dialirkan secara kontinu. |
-| `sent_lsn` = `write_lsn` = `flush_lsn` = `replay_lsn` | `0/304F638` | Replica sudah menerima, menulis, dan menerapkan WAL sampai posisi yang sama dengan primary (tidak ada *lag*). |
-| `sync_state` | `async` | Replikasi asinkron. |
+![Log replica](img/04-log-replica.png)
 
-Pada `pg_replication_slots`: slot `replication_slot` bertipe `physical`, `active = t`, dan `active_pid = 61` sama dengan `pid` pada `pg_stat_replication`, yaitu slot dipakai oleh koneksi replica tersebut. `wal_status = reserved` berarti WAL yang dibutuhkan replica ditahan oleh primary. Sebelum tabel dibuat, `\dt` menampilkan `Did not find any tables.`
+### 3.5 Status replikasi di primary
 
-![pg_stat_replication di primary](img/05-pg-stat-replication.png)
-*Screenshot: hasil `SELECT * FROM pg_stat_replication;` (tampilan `\x`).*
+```bash
+dep
+psql -U zuser -d zdb
+\x
+SELECT * FROM pg_stat_replication;
+```
 
-![pg_replication_slots di primary](img/06-pg-replication-slots.png)
-*Screenshot: hasil `SELECT * FROM pg_replication_slots;` dan `\dt` kosong di primary.*
+```
+-[ RECORD 1 ]----+------------------------------
+pid              | 61
+usename          | replicator
+application_name | walreceiver
+client_addr      | 172.20.0.3
+state            | streaming
+sent_lsn         | 0/304F638
+write_lsn        | 0/304F638
+flush_lsn        | 0/304F638
+replay_lsn       | 0/304F638
+sync_priority    | 0
+sync_state       | async
+```
 
-**Pada replica** (`der`, lalu `psql -U zuser -d zdb`):
+![pg_stat_replication](img/05-pg-stat-replication.png)
 
 ```sql
+SELECT * FROM pg_replication_slots;
+```
+
+```
+slot_name           | replication_slot
+slot_type           | physical
+active              | t
+active_pid          | 61
+restart_lsn         | 0/304F638
+wal_status          | reserved
+```
+
+`\dt` pada primary menampilkan `Did not find any tables.`
+
+![pg_replication_slots](img/06-pg-replication-slots.png)
+
+| Pengamatan | Arti |
+|---|---|
+| `state = streaming` | WAL dialirkan secara kontinu ke replica. |
+| `sent_lsn = write_lsn = flush_lsn = replay_lsn = 0/304F638` | Replica sudah menerima, menulis, dan menerapkan WAL sampai posisi yang sama dengan primary (tidak ada *lag*). |
+| `sync_state = async` | Replikasi asinkron. |
+| `active = t`, `active_pid = 61` | Slot dipakai koneksi replica yang sama (pid 61 sama dengan di `pg_stat_replication`). |
+| `wal_status = reserved` | Primary menahan WAL yang dibutuhkan replica. |
+
+### 3.6 Status di replica
+
+```bash
+der
+psql -U zuser -d zdb
 SELECT pg_is_in_recovery();
 \dt
 ```
 
-`pg_is_in_recovery()` bernilai `t` (true), artinya server berada dalam mode standby (recovery), hanya menerima WAL dan melayani baca. Belum ada tabel.
+```
+ pg_is_in_recovery
+-------------------
+ t
+Did not find any tables.
+```
+
+Nilai `t` menunjukkan server berada dalam mode standby/recovery: hanya menerima WAL dan melayani baca.
 
 ![pg_is_in_recovery di replica](img/07-replica-in-recovery.png)
-*Screenshot: `SELECT pg_is_in_recovery();` = `t` dan `\dt` kosong di replica.*
 
-### 3.6 Pengujian replikasi data
+### 3.7 Pengujian replikasi data
 
-**Di primary** dibuat tabel dan diisi dua baris:
+Di **primary**:
 
 ```sql
 CREATE TABLE testrep (first INT, second VARCHAR(15));
@@ -159,29 +213,59 @@ INSERT INTO testrep (first, second) VALUES (23, 'Test ke dua');
 SELECT * FROM testrep;
 ```
 
-![Membuat tabel dan insert di primary](img/08-primary-create-insert.png)
-*Screenshot: seluruh proses `CREATE TABLE`, `INSERT`, dan `SELECT` di primary (2 rows).*
+```
+CREATE TABLE
+(0 rows)
+INSERT 0 1
+INSERT 0 1
+ first |    second
+-------+--------------
+    21 | Test pertama
+    23 | Test ke dua
+(2 rows)
+```
 
-**Di replica**, tanpa mengisi apa pun, tabel dan data sudah muncul:
+![Create dan insert di primary](img/08-primary-create-insert.png)
+
+Di **replica**, tanpa mengisi apa pun:
 
 ```sql
 \dt
 SELECT * FROM testrep;
 ```
 
-![Data testrep muncul di replica](img/09-replica-testrep.png)
-*Screenshot: `\dt` menampilkan `testrep` dan `SELECT * FROM testrep;` menampilkan 2 baris di replica.*
+```
+ Schema |  Name   | Type  | Owner
+--------+---------+-------+-------
+ public | testrep | table | zuser
 
-Ini membuktikan bahwa perubahan di primary (DDL dan DML) direplikasi otomatis ke replica melalui WAL.
+ first |    second
+-------+--------------
+    21 | Test pertama
+    23 | Test ke dua
+(2 rows)
+```
 
-### 3.7 High Availability: failover
+Tabel dan data muncul otomatis di replica. Ini membuktikan DDL dan DML di primary direplikasi melalui WAL.
 
-Primary dimatikan, lalu replica dipromosikan:
+![Data testrep di replica](img/09-replica-testrep.png)
+
+### 3.8 High Availability (failover)
 
 ```bash
 docker compose stop postgres_primary
 dps
 ```
+
+```
+✔ Container streaming-replication-postgres_primary-1 Stopped
+```
+
+`dps` kini hanya menampilkan container replica.
+
+![Primary dihentikan](img/10-stop-primary.png)
+
+Di replica:
 
 ```sql
 SELECT pg_is_in_recovery();   -- t
@@ -189,50 +273,63 @@ SELECT pg_promote();          -- t
 SELECT pg_is_in_recovery();   -- f
 ```
 
-![Primary dihentikan](img/10-stop-primary.png)
-*Screenshot: `docker compose stop postgres_primary` dan `dps` yang hanya menampilkan replica.*
+Nilai `f` setelah `pg_promote()` menunjukkan replica telah keluar dari mode recovery dan menjadi primary baru yang dapat menerima baca-tulis.
 
 ![pg_promote](img/11-pg-promote.png)
-*Screenshot: urutan `pg_is_in_recovery()` (t), `pg_promote()` (t), `pg_is_in_recovery()` (f).*
 
-Nilai `f` setelah `pg_promote()` menunjukkan replica telah keluar dari mode recovery dan menjadi primary baru yang dapat menerima operasi baca-tulis.
-
-### 3.8 Mematikan semua container
+### 3.9 Mematikan semua
 
 ```bash
 dcd
 dps
 ```
 
+```
+✔ Container streaming-replication-postgres_replica-1 Removed
+✔ Container streaming-replication-postgres_primary-1 Removed
+✔ Network streaming-replication_default              Removed
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+
 ![dcd dan dps kosong](img/12-dcd-postgres.png)
-*Screenshot: `dcd` (container dan network `Removed`) dan `dps` kosong.*
 
-### 3.9 Pembahasan 4.1
+### 3.10 Pembahasan 4.1
 
-1. **Pola primary-replica.** Hanya satu server (primary) yang menerima tulis, sehingga urutan perubahan jelas dan konflik tulis tidak terjadi. Konsekuensinya, primary menjadi titik tunggal kegagalan untuk operasi tulis sampai replica dipromosikan.
-2. **Asinkron vs sinkron.** `sync_state = async` berarti latensi tulis rendah, tetapi bila primary mati mendadak, transaksi terakhir yang belum sampai ke replica bisa hilang. Mode sinkron (`synchronous_standby_names`) menghilangkan risiko itu dengan harga latensi lebih tinggi. Pada pengujian ini nilai LSN primary dan replica identik sehingga tidak ada *lag* yang terlihat.
-3. **Peran replication slot.** Slot membuat primary menahan WAL sampai dikonsumsi replica, sehingga replica yang sempat terputus tidak kehilangan data perubahan. Risikonya, jika replica mati lama, WAL menumpuk dan memakan disk di primary.
-4. **Failover manual.** `pg_promote()` dijalankan manual. Pada sistem produksi, deteksi kegagalan dan promosi biasanya diotomatisasi (misalnya dengan Patroni). Setelah promosi, primary lama tidak otomatis menjadi replica dan perlu dikonfigurasi ulang.
-5. **Konsistensi.** Replica melayani pembacaan, tetapi pada mode asinkron pembacaan di replica dapat sedikit tertinggal dari primary (*eventual consistency*). Aplikasi yang butuh data terbaru harus membaca dari primary.
+1. **Pola primary-replica.** Hanya primary yang menerima tulis, sehingga urutan perubahan jelas dan konflik tulis tidak terjadi. Konsekuensinya, primary menjadi titik tunggal kegagalan untuk tulis sampai replica dipromosikan.
+2. **Asinkron vs sinkron.** Dengan `sync_state = async`, latensi tulis rendah, tetapi bila primary mati mendadak, transaksi terakhir yang belum sampai ke replica dapat hilang. Mode sinkron (`synchronous_standby_names`) menghilangkan risiko itu dengan latensi lebih tinggi. Pada pengujian ini semua nilai LSN identik sehingga tidak ada *lag* yang terlihat.
+3. **Replication slot.** Slot membuat primary menahan WAL sampai dikonsumsi replica, sehingga replica yang sempat terputus tidak kehilangan perubahan. Risikonya, bila replica mati lama, WAL menumpuk dan memakan disk primary.
+4. **Failover manual.** `pg_promote()` dijalankan manual. Pada produksi, deteksi kegagalan dan promosi biasanya diotomatisasi (misalnya Patroni). Primary lama tidak otomatis menjadi replica dan perlu dikonfigurasi ulang.
+5. **Konsistensi.** Replica melayani baca, tetapi pada mode asinkron pembacaan dapat sedikit tertinggal dari primary (*eventual consistency*). Aplikasi yang butuh data terbaru sebaiknya membaca dari primary.
 
 ---
 
 ## 4. Bagian 4.2: Replikasi Master-Master dengan Apache Ignite 3.1.0
 
-### 4.1 Konsep singkat
+### 4.1 Konsep
 
-Pada Apache Ignite 3, semua node dalam cluster dapat menerima koneksi klien untuk baca maupun tulis, sehingga sering disebut Master-Master. Data dibagi ke dalam partisi dan disalin ke beberapa node, dan konsistensi replika dijaga oleh protokol konsensus (Raft). Berbeda dengan primary-replica pada PostgreSQL, klien bebas terhubung ke node mana saja.
+Pada Apache Ignite 3, setiap node dapat menerima koneksi klien untuk baca maupun tulis, sehingga disebut Master-Master. Data dibagi ke partisi dan disalin ke beberapa node, dan konsistensi replika dijaga oleh protokol konsensus (Raft). Berbeda dengan primary-replica, klien bebas terhubung ke node mana saja.
 
 ### 4.2 File yang dipakai
 
 | File | Fungsi |
 |---|---|
-| `docker-compose.yml` | Mendefinisikan 3 node Ignite (`node1`, `node2`, `node3`). Diunduh dari dokumentasi Apache Ignite. |
-| `sql.zip` (`sql/`) | Berisi 6 file SQL contoh (basis data Chinook): `schema.sql`, `current_catalog.sql`, `media_and_genre.sql`, `tracks.sql`, `ee_and_cust.sql`, `invoices.sql`. |
-| `env.sh` | Alias `dcu`, `dcd`, `dps`, `dclm` (CLI dengan folder `sql` di-mount), `dcli` (CLI tanpa mount). |
+| `docker-compose.yml` | Mendefinisikan 3 node Ignite (`node1`, `node2`, `node3`), diunduh dari dokumentasi Apache Ignite. |
+| `sql.zip` | Berisi 6 file SQL contoh (basis data Chinook). |
+| `env.sh` | Alias `dcu`, `dcd`, `dps`, `dclm` (CLI dengan folder `sql` di-mount), `dcli`. |
 
-![Isi sql.zip dengan tree](img/13-tree-sql.png)
-*Screenshot: output `unzip sql.zip` dan `tree sql/` (6 file `.sql`).*
+```
+sql/
+├── current_catalog.sql
+├── ee_and_cust.sql
+├── invoices.sql
+├── media_and_genre.sql
+├── schema.sql
+└── tracks.sql
+
+1 directory, 6 files
+```
+
+![unzip dan tree sql](img/13-tree-sql.png)
 
 ### 4.3 Menjalankan 3 node
 
@@ -242,27 +339,15 @@ dcu
 dps
 ```
 
-| Container | Port REST API (host) | Port aplikasi (host) |
-|---|---|---|
-| `ignite3-node1-1` | 10300 | 10800 |
-| `ignite3-node2-1` | 10301 | 10801 |
-| `ignite3-node3-1` | 10302 | 10802 |
-
-Port 10300-10302 dipakai untuk REST API administratif dan koneksi CLI, sedangkan 10800-10802 untuk koneksi aplikasi.
+| Container | Port REST API (host) | Port aplikasi (host) | IP (docker inspect) |
+|---|---|---|---|
+| `ignite3-node1-1` | 10300 | 10800 | 172.20.0.3 |
+| `ignite3-node2-1` | 10301 | 10801 | 172.20.0.4 |
+| `ignite3-node3-1` | 10302 | 10802 | 172.20.0.2 |
 
 ![dcu dan dps Ignite](img/14-dcu-dps-ignite.png)
-*Screenshot: output `dcu` dan `dps` yang menampilkan tiga container Ignite dan port-nya.*
 
-**Alamat IP node** (dari `docker inspect`):
-
-| Node | IP |
-|---|---|
-| `ignite3-node1-1` | 172.20.0.3 |
-| `ignite3-node2-1` | 172.20.0.4 |
-| `ignite3-node3-1` | 172.20.0.2 |
-
-![docker inspect IP node](img/15-docker-inspect-ip.png)
-*Screenshot: tiga perintah `docker inspect` beserta IP-nya.*
+![docker inspect IP](img/15-docker-inspect-ip.png)
 
 > **Catatan:** pada Docker Desktop, jaringan bridge container umumnya tidak dapat dijangkau langsung dari WSL, sehingga `ping` ke IP container dapat gagal (`Destination Host Unreachable`). Hal ini tidak memengaruhi praktikum karena CLI terhubung lewat `localhost` dengan port yang dipetakan.
 
@@ -273,18 +358,17 @@ dclm
 ```
 
 ```
-cluster init --name=ignite3 --metastorage-group=node1,node2,node3
-cluster status
+Connected to http://localhost:10300
+The cluster is not initialized. Run cluster init command to initialize it.
+[node1]> cluster init --name=ignite3 --metastorage-group=node1,node2,node3
+Cluster was initialized successfully
+[node1]> cluster status
+[name: ignite3, nodes: 3, status: active, cmgNodes: [node1, node2, node3], msNodes: [node1, node2, node3]]
 ```
 
-Hasil: `Cluster was initialized successfully` dan `[name: ignite3, nodes: 3, status: active, cmgNodes: [node1, node2, node3], msNodes: [node1, node2, node3]]`.
-
-`--metastorage-group` menentukan node yang menyimpan metadata cluster (Meta Storage). Karena `--cluster-management-group` tidak diisi, node yang sama juga menjadi Cluster Management Group. Ketiga node ikut serta sehingga metadata direplikasi di ketiganya.
-
-> Pada percobaan pertama, perintah `cluster init` dan `cluster status` tertempel sekaligus dan menghasilkan galat `Unmatched arguments`. Perintah diulang satu per satu dan berhasil.
+`--metastorage-group` menentukan node yang menyimpan metadata cluster. Karena `--cluster-management-group` tidak diisi, node yang sama juga menjadi Cluster Management Group, sehingga metadata direplikasi di ketiga node.
 
 ![cluster init dan status](img/16-cluster-init-status.png)
-*Screenshot: `cluster init ...` (berhasil) dan `cluster status` (`nodes: 3, status: active`).*
 
 ### 4.5 Menjalankan file SQL
 
@@ -301,41 +385,54 @@ sql --file=/opt/ignite/sql/invoices.sql
 
 | File | Hasil |
 |---|---|
-| `schema.sql` | 20 pernyataan DDL (`Updated 0 rows.`) |
+| `schema.sql` | 20 kali `Updated 0 rows.` |
 | `current_catalog.sql` | 275 dan 347 baris |
 | `media_and_genre.sql` | 25 dan 5 baris |
 | `tracks.sql` | 1000, 1000, 1000, 503 baris |
 | `ee_and_cust.sql` | 8 dan 59 baris |
 | `invoices.sql` | 412, 1000, 1000, 240, 18, 1000 (8 kali), 715 baris |
 
+Sebelum `schema.sql` dijalankan, `system.tables` mengembalikan `(empty)`.
+
 ![schema.sql](img/17-sql-schema.png)
-*Screenshot: hasil `schema.sql`.*
 
-![File SQL lainnya](img/18-sql-data.png)
-*Screenshot: hasil `current_catalog.sql`, `media_and_genre.sql`, `tracks.sql`, `ee_and_cust.sql`, `invoices.sql`.*
+![File SQL data](img/18-sql-data.png)
 
-> Catatan: sebelum file SQL dijalankan, `SELECT * FROM system.tables WHERE schema = 'PUBLIC';` menghasilkan `(empty)`. Setelah `schema.sql` dijalankan, tabel muncul.
+### 4.6 Tabel di node 1
 
-### 4.6 Memeriksa tabel pada node 1
-
-```
-sql
+```sql
 SELECT * FROM system.tables WHERE schema = 'PUBLIC';
 ```
 
-Muncul 11 tabel: `ALBUM`, `PLAYLISTTRACK`, `TRACK`, `CUSTOMER`, `MEDIATYPE`, `PLAYLIST`, `ARTIST`, `INVOICELINE`, `EMPLOYEE`, `GENRE`, `INVOICE`.
+| TABLE_NAME | ZONE_NAME | TABLE_COLOCATION_COLUMNS |
+|---|---|---|
+| ALBUM | CHINOOK | ARTISTID |
+| PLAYLISTTRACK | CHINOOK | PLAYLISTID, TRACKID |
+| TRACK | CHINOOK | ALBUMID |
+| CUSTOMER | CHINOOK | CUSTOMERID |
+| MEDIATYPE | CHINOOKREPLICATED | MEDIATYPEID |
+| PLAYLIST | CHINOOK | PLAYLISTID |
+| ARTIST | CHINOOK | ARTISTID |
+| INVOICELINE | CHINOOK | INVOICEID |
+| EMPLOYEE | CHINOOK | EMPLOYEEID |
+| GENRE | CHINOOKREPLICATED | GENREID |
+| INVOICE | CHINOOK | CUSTOMERID |
 
-![system.tables di node 1](img/19-system-tables-node1.png)
-*Screenshot: hasil `system.tables` di node 1 (11 tabel).*
+![system.tables node 1](img/19-system-tables-node1.png)
 
 ### 4.7 Verifikasi di node 2 (port 10301)
 
 ```
-connect http://localhost:10301
-sql
+[node1]> connect http://localhost:10301
+Connected to http://localhost:10301
+[node2]> sql
 ```
 
-Tabel `PUBLIC` yang sama muncul di node 2, dan query analytics berikut menghasilkan data:
+Tabel `PUBLIC` yang sama (11 tabel) muncul di node 2.
+
+![system.tables node 2](img/20-system-tables-node2.png)
+
+Query analytics:
 
 ```sql
 -- Monthly sales summary for the last 12 months
@@ -358,31 +455,31 @@ ORDER BY
     YearMonth DESC;
 ```
 
-Baris teratas hasil di node 2:
+Hasil di node 2 (cuplikan):
 
 | YEARMONTH | INVOICECOUNT | CUSTOMERCOUNT | MONTHLYREVENUE | AVERAGEORDERVALUE |
 |---|---|---|---|---|
 | 2024-12 | 7 | 7 | 38.62 | 5.5171428571428571 |
 | 2024-11 | 7 | 7 | 49.62 | 7.0885714285714285 |
 | 2024-10 | 7 | 7 | 37.62 | 5.3742857142857142 |
+| 2024-04 | 5 | 5 | 33.66 | 6.7320000000000000 |
+| 2024-02 | 5 | 5 | 27.72 | 5.5440000000000000 |
+| ... | ... | ... | ... | ... |
+| 2020-01 | 6 | 6 | 35.64 | 5.9400000000000000 |
 
-![system.tables di node 2](img/20-system-tables-node2.png)
-*Screenshot: `connect http://localhost:10301`, prompt `[node2]>`, dan hasil `system.tables`.*
-
-![Query analytics di node 2](img/21-analytics-node2.png)
-*Screenshot: query analytics dan bagian atas tabel hasil di node 2.*
+![Analytics node 2](img/21-analytics-node2.png)
 
 ### 4.8 Verifikasi di node 3 (port 10302)
 
 ```
-connect http://localhost:10302
-sql
+[node2]> connect http://localhost:10302
+Connected to http://localhost:10302
+[node3]> sql
 ```
 
-Query analytics yang sama dijalankan dan menghasilkan data yang **identik** dengan node 2 (2024-12: 7 invoice, 7 pelanggan, 38.62, 5.5171428571428571; 2024-11: 49.62; dan seterusnya sampai 2020-01: 35.64).
+Query analytics yang sama menghasilkan data **identik** dengan node 2 (2024-12: 7 invoice, 7 pelanggan, 38.62, 5.5171428571428571; 2024-11: 49.62; ... ; 2020-01: 35.64).
 
-![Query analytics di node 3](img/22-analytics-node3.png)
-*Screenshot: `connect http://localhost:10302`, prompt `[node3]>`, query analytics, dan bagian atas tabel hasil di node 3.*
+![Analytics node 3](img/22-analytics-node3.png)
 
 ### 4.9 Mematikan semua node
 
@@ -391,14 +488,15 @@ dcd
 dps
 ```
 
+Hasil yang diharapkan: ketiga container dan network `ignite3_default` berstatus `Removed`, dan `dps` kosong.
+
 ![dcd dan dps Ignite](img/23-dcd-ignite.png)
-*Screenshot: `dcd` (3 container dan network `Removed`) dan `dps` kosong.*
 
 ### 4.10 Pembahasan 4.2
 
-1. **Data masuk lewat satu node, terbaca di semua node.** Seluruh file SQL dijalankan hanya melalui node 1, tetapi node 2 dan node 3 mengembalikan tabel dan hasil agregasi yang sama persis. Ini menunjukkan data dan skema tersedia di seluruh cluster, dan klien dapat memakai node mana pun sebagai titik akses.
-2. **Kolokasi dan zona distribusi.** Pada `system.tables`, sebagian besar tabel berada di zona `CHINOOK` (data dipartisi, dengan kolom kolokasi seperti `ARTISTID`, `ALBUMID`, `CUSTOMERID` sehingga data yang saling terkait ditempatkan berdekatan), sedangkan `MEDIATYPE` dan `GENRE` berada di zona `CHINOOKREPLICATED` (tabel kecil yang disalin penuh ke banyak node untuk mempercepat join). Jadi replikasi dipengaruhi konfigurasi zona.
-3. **Konsistensi.** Karena replika dijaga konsensus Raft, hasil query di node 1, 2, dan 3 konsisten. Ini berbeda dengan pola asinkron PostgreSQL di bagian 4.1 yang dapat menghasilkan pembacaan sedikit tertinggal di replica.
+1. **Data masuk lewat satu node, terbaca di semua node.** Semua file SQL dijalankan hanya melalui node 1, tetapi node 2 dan node 3 mengembalikan tabel dan hasil agregasi yang sama persis. Ini menunjukkan data dan skema tersedia di seluruh cluster, dan klien dapat memakai node mana pun sebagai titik akses.
+2. **Zona dan kolokasi.** Sebagian besar tabel berada di zona `CHINOOK` (data dipartisi, kolom kolokasi seperti `ARTISTID`, `ALBUMID`, `CUSTOMERID` menempatkan data terkait berdekatan), sedangkan `MEDIATYPE` dan `GENRE` berada di zona `CHINOOKREPLICATED` (tabel kecil yang disalin penuh ke banyak node untuk mempercepat join).
+3. **Konsistensi.** Replika dijaga konsensus Raft, sehingga hasil query di node 1, 2, dan 3 konsisten. Ini berbeda dengan replikasi asinkron PostgreSQL yang dapat menghasilkan pembacaan sedikit tertinggal di replica.
 4. **Perbandingan dengan PostgreSQL.**
 
 | Aspek | PostgreSQL streaming replication | Apache Ignite 3 cluster |
@@ -406,34 +504,86 @@ dps
 | Topologi | Satu primary, satu atau lebih replica | Semua node setara sebagai titik akses |
 | Tulis | Hanya di primary | Dapat melalui node mana pun |
 | Baca dari replika | Replica hanya baca, bisa tertinggal (async) | Semua node dapat dibaca |
-| Failover | Manual (`pg_promote()`) atau dengan alat tambahan | Ditangani cluster (konsensus) selama mayoritas node hidup |
+| Failover | Manual (`pg_promote()`) atau alat tambahan | Ditangani cluster (konsensus) selama mayoritas node hidup |
 | Kelebihan | Sederhana, matang, dukungan luas | Skalabilitas dan ketersediaan lebih baik |
 | Kekurangan | Primary titik tunggal untuk tulis | Konfigurasi dan operasional lebih kompleks |
 
 ---
 
-## 5. Kendala dan Solusi
+## 5. Kesesuaian dengan Modul
+
+| Langkah di modul | Hasil praktikum | Sesuai |
+|---|---|---|
+| Dua container PostgreSQL `healthy` (hal. 4) | Primary dan replica `(healthy)` | Ya |
+| Log replica (hal. 5) | `Connection refused` di awal, lalu `started streaming WAL from primary` | Ya |
+| `pg_stat_replication` (hal. 6) | `state = streaming`, `sync_state = async` | Ya |
+| `pg_replication_slots` (hal. 7) | `replication_slot`, `physical`, `active = t` | Ya |
+| `pg_is_in_recovery()` di replica (hal. 8) | `t` | Ya |
+| `testrep` dibuat di primary (hal. 9) | 2 baris | Ya |
+| Data muncul di replica (hal. 10) | Tabel dan 2 baris muncul | Ya |
+| Failover (hal. 11) | `t`, `t`, `f` | Ya |
+| `dcd` PostgreSQL (hal. 12) | Semua `Removed`, `dps` kosong | Ya |
+| 3 node Ignite, port 10300-10302 dan 10800-10802 (hal. 13) | Sama | Ya |
+| `cluster init` dan `cluster status` (hal. 15) | `nodes: 3, status: active` | Ya |
+| `schema.sql` dan file SQL lain (hal. 17, 19) | Jumlah baris sama persis | Ya |
+| `system.tables` (hal. 18) | 11 tabel, dua zona | Ya |
+| Query analytics node 2 dan node 3 (hal. 21, 22) | Hasil identik, 2024-12 = 38.62 | Ya |
+| `dcd` Ignite (hal. 22) | Dijalankan di akhir praktikum | Lihat bagian 4.9 |
+
+**Perbedaan wajar:** port replica 5434 (bukan 5433), nama container `streaming-replication-...` (bukan `src-...`), tanpa `sudo`, serta ID container, IP, dan waktu yang berbeda.
+
+---
+
+## 6. Kendala dan Solusi
 
 | No | Kendala | Penyebab | Solusi |
 |---|---|---|---|
 | 1 | `source` tidak dikenali di terminal VS Code | Terminal bawaan adalah PowerShell | Memakai WSL Ubuntu (Bash) |
 | 2 | Container lama `Restarting` dan bentrok nama | Sisa percobaan sebelumnya | `docker rm -f` dan `docker container prune` |
-| 3 | Replica gagal start: port 5433 `address already in use` | Port 5433 dipakai proses lain di host | Mengubah port host replica menjadi 5434 |
-| 4 | Perintah SQL tidak jalan (`bash: SELECT: command not found`) | `psql` ikut tertempel dan dijalankan setelah `exit`, sehingga SQL diketik di shell | Mengetik satu perintah per baris dan menunggu prompt berubah (`zdb=#`) |
-| 5 | `docker-compose.yml` dan `sql.zip` Ignite gagal diunduh dari WSL (timeout) | `ignite.apache.org` tidak terjangkau dari WSL | Mengunduh lewat browser Windows lalu menyalin ke WSL dengan `cp` |
+| 3 | Replica gagal start: port 5433 `address already in use` | Port 5433 dipakai proses lain di host | Mengubah port host replica ke 5434 |
+| 4 | `bash: SELECT: command not found` | `psql` ikut tertempel dan dijalankan setelah `exit`, sehingga SQL diketik di shell | Mengetik satu perintah per baris dan menunggu prompt berubah (`zdb=#`) |
+| 5 | `docker-compose.yml` dan `sql.zip` Ignite gagal diunduh dari WSL (timeout) | `ignite.apache.org` tidak terjangkau dari WSL | Mengunduh lewat browser Windows lalu menyalin dengan `cp` |
 | 6 | `cluster init` galat `Unmatched arguments` | Dua perintah tertempel sekaligus | Menjalankan perintah satu per satu |
-| 7 | Tabel `PUBLIC` kosong di `system.tables` | File SQL belum dijalankan; `sql --file=...` sempat diketik di prompt `sql-cli>` | Menjalankan `sql --file=...` dari prompt `[node1]>` |
-| 8 | `ping` ke IP container gagal | Jaringan container Docker Desktop tidak terjangkau dari WSL | Tidak berpengaruh; CLI terhubung lewat `localhost` |
+| 7 | `system.tables` kosong | File SQL belum dijalankan; `sql --file=...` sempat diketik di prompt `sql-cli>` | Menjalankan `sql --file=...` dari prompt `[node1]>` |
+| 8 | `ping` ke IP container gagal | Jaringan container Docker Desktop tidak terjangkau dari WSL (dan IP yang di-ping sempat salah) | Tidak berpengaruh; CLI terhubung lewat `localhost` |
 
-## 6. Kesimpulan
+## 7. Kesimpulan
 
-1. Streaming replication PostgreSQL 18 berhasil dikonfigurasi. Status `streaming`, slot replikasi aktif, dan data pada tabel `testrep` di primary otomatis muncul di replica.
+1. Streaming replication PostgreSQL 18 berhasil dikonfigurasi: status `streaming`, slot replikasi aktif, dan data `testrep` di primary otomatis muncul di replica.
 2. Simulasi failover berhasil: setelah primary dihentikan, `pg_promote()` mengubah `pg_is_in_recovery()` dari `t` menjadi `f`, yaitu replica menjadi primary baru.
-3. Cluster Apache Ignite 3.1.0 dengan 3 node berhasil diinisialisasi (`nodes: 3, status: active`). Data yang dimuat melalui node 1 dapat dibaca dengan hasil identik dari node 2 dan node 3, sehingga replikasi antar node terbukti.
-4. Pola primary-replica (PostgreSQL) cocok untuk skenario sederhana dengan satu titik tulis, sedangkan cluster Ignite memberi akses yang lebih setara antar node, dengan biaya kompleksitas konfigurasi yang lebih tinggi.
+3. Cluster Apache Ignite 3.1.0 dengan 3 node berhasil diinisialisasi (`nodes: 3, status: active`). Data yang dimuat lewat node 1 terbaca identik dari node 2 dan node 3, sehingga replikasi antar node terbukti.
+4. Pola primary-replica (PostgreSQL) cocok untuk skenario sederhana dengan satu titik tulis, sedangkan cluster Ignite memberi akses lebih setara antar node dengan biaya konfigurasi yang lebih tinggi.
 
 ---
 
+## Lampiran: Daftar Screenshot
+
+| No | File | Isi |
+|---|---|---|
+| 1 | `img/00-versi-docker.png` | Versi Docker dan Compose |
+| 2 | `img/01-struktur-file.png` | `ls -la` tiga file PostgreSQL |
+| 3 | `img/02-error-port-5433.png` | Galat port 5433 bentrok |
+| 4 | `img/03-dcu-dps-healthy.png` | `dcu` dan `dps` (healthy) |
+| 5 | `img/04-log-replica.png` | Log replica (`dlr`) |
+| 6 | `img/05-pg-stat-replication.png` | `pg_stat_replication` |
+| 7 | `img/06-pg-replication-slots.png` | `pg_replication_slots` dan `\dt` kosong |
+| 8 | `img/07-replica-in-recovery.png` | `pg_is_in_recovery()` = t di replica |
+| 9 | `img/08-primary-create-insert.png` | Membuat dan mengisi `testrep` di primary |
+| 10 | `img/09-replica-testrep.png` | Data `testrep` di replica |
+| 11 | `img/10-stop-primary.png` | Primary dihentikan |
+| 12 | `img/11-pg-promote.png` | `pg_promote()` dan status recovery |
+| 13 | `img/12-dcd-postgres.png` | `dcd` dan `dps` kosong (PostgreSQL) |
+| 14 | `img/13-tree-sql.png` | `unzip` dan `tree sql/` |
+| 15 | `img/14-dcu-dps-ignite.png` | `dcu` dan `dps` Ignite |
+| 16 | `img/15-docker-inspect-ip.png` | IP tiap node Ignite |
+| 17 | `img/16-cluster-init-status.png` | `cluster init` dan `cluster status` |
+| 18 | `img/17-sql-schema.png` | Hasil `schema.sql` |
+| 19 | `img/18-sql-data.png` | Hasil file SQL data |
+| 20 | `img/19-system-tables-node1.png` | `system.tables` di node 1 |
+| 21 | `img/20-system-tables-node2.png` | `system.tables` di node 2 |
+| 22 | `img/21-analytics-node2.png` | Query analytics di node 2 |
+| 23 | `img/22-analytics-node3.png` | Query analytics di node 3 |
+| 24 | `img/23-dcd-ignite.png` | `dcd` dan `dps` kosong (Ignite) |
 
 ## Referensi
 
