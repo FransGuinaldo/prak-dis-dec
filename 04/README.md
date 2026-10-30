@@ -5,9 +5,6 @@
 | **Nama** | Francisco G I dc Corbafp |
 | **NIM** | _255410003_ |
 | **Mata kuliah** | Sistem Terdistribusi dan Terdesentralisasi |
-| **Tanggal praktikum** | 30 Oktober 2026 |
-
-> **Cara memakai laporan ini:** setiap `![...](img/xx.png)` adalah tempat screenshot. Simpan screenshot di folder `img/` dengan nama file yang sama. Daftar lengkap nama file ada di bagian **Lampiran: Daftar Screenshot**.
 
 ---
 
@@ -27,8 +24,8 @@
 | Image PostgreSQL | `postgres:18.3-alpine3.23` |
 | Image Ignite | `apacheignite/ignite:3.1.0` |
 
-![Versi Docker dan Docker Compose](img/00-versi-docker.png)
-*Screenshot: output `docker --version`, `docker compose version`.*
+![Versi Docker dan Docker Compose]
+img00-versi-docker.png
 
 ---
 
