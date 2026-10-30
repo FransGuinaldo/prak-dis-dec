@@ -25,6 +25,7 @@
 | Image Ignite | `apacheignite/ignite:3.1.0` |
 
 [Versi Docker dan Docker Compose]
+
 <img width="878" height="838" alt="image" src="https://github.com/user-attachments/assets/a2f3b024-fd67-4c52-9b0e-bbcd6c820106" />
 
 ---
