@@ -305,7 +305,8 @@ dps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
-![dcd dan dps kosong](img/12-dcd-postgres.png)
+<img width="409" height="161" alt="image" src="https://github.com/user-attachments/assets/0b8ae15d-982c-426f-aed9-744300534ce0" />
+
 
 ### 3.10 Pembahasan 4.1
 
