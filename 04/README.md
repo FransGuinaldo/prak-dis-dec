@@ -435,7 +435,8 @@ dps
 
 | No | File | Isi |
 |---|---|---|
-| 1 | `img/00-versi-docker.png` | Versi Docker dan Compose |
+| 1 | `<img width="878" height="838" alt="image" src="https://github.com/user-attachments/assets/67e7ee19-178d-495c-99cb-7ffeb9c80a23" />
+` | Versi Docker dan Compose |
 | 2 | `img/01-struktur-file.png` | `ls -la` tiga file PostgreSQL |
 | 3 | `img/02-error-port-5433.png` | Galat port 5433 bentrok |
 | 4 | `img/03-dcu-dps-healthy.png` | `dcu` dan `dps` (healthy) |
