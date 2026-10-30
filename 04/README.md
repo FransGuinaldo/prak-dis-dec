@@ -209,7 +209,8 @@ Did not find any tables.
 
 Nilai `t` menunjukkan server berada dalam mode standby/recovery: hanya menerima WAL dan melayani baca.
 
-![pg_is_in_recovery di replica](img/07-replica-in-recovery.png)
+<img width="348" height="190" alt="image" src="https://github.com/user-attachments/assets/21de3c2a-6049-41bf-a6ff-9c7796ae209e" />
+
 
 ### 3.7 Pengujian replikasi data
 
