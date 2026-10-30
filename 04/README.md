@@ -24,7 +24,7 @@
 | Image PostgreSQL | `postgres:18.3-alpine3.23` |
 | Image Ignite | `apacheignite/ignite:3.1.0` |
 
-![Versi Docker dan Docker Compose]
+[Versi Docker dan Docker Compose]
 <img width="878" height="838" alt="image" src="https://github.com/user-attachments/assets/a2f3b024-fd67-4c52-9b0e-bbcd6c820106" />
 
 ---
@@ -63,8 +63,9 @@ streaming-replication/
 
 **Cara kerja replica:** saat start, replica menjalankan `pg_basebackup` dari primary (`-R` membuat file konfigurasi standby, `--slot` memakai slot replikasi, `-X stream` ikut mengalirkan WAL). Perintah diulang tiap 5 detik sampai primary siap, baru kemudian `postgres` dijalankan dalam mode standby.
 
-![Isi tiga file dan ls -la](img/01-struktur-file.png)
-*Screenshot: output `ls -la` yang menampilkan `00_init.sql`, `docker-compose.yaml`, `env.sh`.*
+[Isi tiga file dan ls -la]
+<img width="768" height="812" alt="image" src="https://github.com/user-attachments/assets/23608496-053c-47fe-92fc-aabe1cd3b6cb" />
+
 
 ### 3.3 Menjalankan docker compose
 
