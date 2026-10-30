@@ -68,6 +68,8 @@ streaming-replication/
 
 <img width="768" height="812" alt="image" src="https://github.com/user-attachments/assets/adbc5ebf-aba0-4daf-9cf4-ce79b5de9376" />
 
+<img width="472" height="73" alt="img01b-struktur file" src="https://github.com/user-attachments/assets/4f815e02-f7da-471c-b532-9f3824ae6631" />
+
 
 ```
 -rw-r--r-- 1 frans frans  146 Oct 30 08:31 00_init.sql
