@@ -180,7 +180,8 @@ wal_status          | reserved
 
 `\dt` pada primary menampilkan `Did not find any tables.`
 
-![pg_replication_slots](img/06-pg-replication-slots.png)
+<img width="271" height="371" alt="image" src="https://github.com/user-attachments/assets/f2b636a8-7430-4f06-9d5f-7f40ff2f56d1" />
+
 
 | Pengamatan | Arti |
 |---|---|
