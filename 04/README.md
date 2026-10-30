@@ -431,35 +431,6 @@ dps
 
 ---
 
-## Lampiran: Daftar Screenshot
-
-| No | File | Isi |
-|---|---|---|
-| 1 | `<img width="878" height="838" alt="image" src="https://github.com/user-attachments/assets/67e7ee19-178d-495c-99cb-7ffeb9c80a23" />
-` | Versi Docker dan Compose |
-| 2 | `img/01-struktur-file.png` | `ls -la` tiga file PostgreSQL |
-| 3 | `img/02-error-port-5433.png` | Galat port 5433 bentrok |
-| 4 | `img/03-dcu-dps-healthy.png` | `dcu` dan `dps` (healthy) |
-| 5 | `img/04-log-replica.png` | Log replica (`dlr`) |
-| 6 | `img/05-pg-stat-replication.png` | `pg_stat_replication` |
-| 7 | `img/06-pg-replication-slots.png` | `pg_replication_slots` dan `\dt` kosong |
-| 8 | `img/07-replica-in-recovery.png` | `pg_is_in_recovery()` = t di replica |
-| 9 | `img/08-primary-create-insert.png` | Membuat dan mengisi `testrep` di primary |
-| 10 | `img/09-replica-testrep.png` | Data `testrep` muncul di replica |
-| 11 | `img/10-stop-primary.png` | Primary dihentikan |
-| 12 | `img/11-pg-promote.png` | `pg_promote()` dan status recovery |
-| 13 | `img/12-dcd-postgres.png` | `dcd` dan `dps` kosong (PostgreSQL) |
-| 14 | `img/13-tree-sql.png` | `unzip` dan `tree sql/` |
-| 15 | `img/14-dcu-dps-ignite.png` | `dcu` dan `dps` Ignite |
-| 16 | `img/15-docker-inspect-ip.png` | IP tiap node Ignite |
-| 17 | `img/16-cluster-init-status.png` | `cluster init` dan `cluster status` |
-| 18 | `img/17-sql-schema.png` | Hasil `schema.sql` |
-| 19 | `img/18-sql-data.png` | Hasil file SQL data |
-| 20 | `img/19-system-tables-node1.png` | `system.tables` di node 1 |
-| 21 | `img/20-system-tables-node2.png` | `system.tables` di node 2 |
-| 22 | `img/21-analytics-node2.png` | Query analytics di node 2 |
-| 23 | `img/22-analytics-node3.png` | Query analytics di node 3 |
-| 24 | `img/23-dcd-ignite.png` | `dcd` dan `dps` kosong (Ignite) |
 
 ## Referensi
 
