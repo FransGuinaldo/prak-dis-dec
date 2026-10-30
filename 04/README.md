@@ -135,7 +135,8 @@ Backup done, starting replica...
 
 Galat `Connection refused` di awal wajar: replica sempat mencoba terhubung sebelum primary siap, lalu mengulang sampai berhasil.
 
-![Log replica](img/04-log-replica.png)
+<img width="689" height="213" alt="img04-log replica" src="https://github.com/user-attachments/assets/b0e1a05b-3a09-4ba7-8575-6072f86f5dde" />
+
 
 ### 3.5 Status replikasi di primary
 
