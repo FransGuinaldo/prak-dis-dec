@@ -101,7 +101,8 @@ dcu
 
 Perubahan ini hanya memengaruhi port yang dipetakan ke host. Replica tetap terhubung ke primary lewat jaringan internal Docker (`postgres_primary:5432`), sehingga replikasi tidak terpengaruh.
 
-![Galat port 5433](img/02-error-port-5433.png)
+<img width="1496" height="217" alt="Screenshot 2026-10-31 050419" src="https://github.com/user-attachments/assets/fb51d173-a800-45eb-83c7-60956bc92a63" />
+
 
 Setelah itu kedua container berstatus `healthy`:
 
