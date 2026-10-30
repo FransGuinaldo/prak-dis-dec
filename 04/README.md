@@ -113,7 +113,8 @@ streaming-replication-postgres_replica-1   Up About a minute (healthy)   0.0.0.0
 streaming-replication-postgres_primary-1   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp
 ```
 
-![dcu dan dps healthy](img/03-dcu-dps-healthy.png)
+<img width="1515" height="444" alt="`img03b-dcu-dps-healthy" src="https://github.com/user-attachments/assets/2a7aeae4-f5a4-4113-a428-a45b64ea756a" />
+
 
 ### 3.4 Log replica
 
