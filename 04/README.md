@@ -27,7 +27,8 @@
 | Image PostgreSQL | `postgres:18.3-alpine3.23` |
 | Image Ignite | `apacheignite/ignite:3.1.0` |
 
-![Versi Docker](img/00-versi-docker.png)
+<img width="878" height="838" alt="image" src="https://github.com/user-attachments/assets/953d7b82-b599-4abc-a60a-a8c220a516ef" />
+
 
 ---
 
