@@ -162,7 +162,8 @@ sync_priority    | 0
 sync_state       | async
 ```
 
-![pg_stat_replication](img/05-pg-stat-replication.png)
+<img width="339" height="357" alt="image" src="https://github.com/user-attachments/assets/2b9246ca-a56f-4db0-9e94-321e480d6844" />
+
 
 ```sql
 SELECT * FROM pg_replication_slots;
