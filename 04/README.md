@@ -288,7 +288,8 @@ SELECT pg_is_in_recovery();   -- f
 
 Nilai `f` setelah `pg_promote()` menunjukkan replica telah keluar dari mode recovery dan menjadi primary baru yang dapat menerima baca-tulis.
 
-![pg_promote](img/11-pg-promote.png)
+<img width="1370" height="484" alt="image" src="https://github.com/user-attachments/assets/c83a9fd6-7d2e-47cc-8bc9-8e87cf789d40" />
+
 
 ### 3.9 Mematikan semua
 
