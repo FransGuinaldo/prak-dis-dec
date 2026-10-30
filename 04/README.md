@@ -344,7 +344,8 @@ sql/
 1 directory, 6 files
 ```
 
-![unzip dan tree sql](img/13-tree-sql.png)
+<img width="1200" height="194" alt="image" src="https://github.com/user-attachments/assets/6afa2197-6d78-465e-9010-364c99f60850" />
+
 
 ### 4.3 Menjalankan 3 node
 
