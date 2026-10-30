@@ -260,7 +260,7 @@ SELECT * FROM testrep;
 
 Tabel dan data muncul otomatis di replica. Ini membuktikan DDL dan DML di primary direplikasi melalui WAL.
 
-![Data testrep di replica](img/09-replica-testrep.png)
+<img width="439" height="581" alt="image" src="https://github.com/user-attachments/assets/f9049365-fdc6-47e5-b981-df6ae9897689" />
 
 ### 3.8 High Availability (failover)
 
@@ -275,7 +275,7 @@ dps
 
 `dps` kini hanya menampilkan container replica.
 
-<img width="439" height="581" alt="image" src="https://github.com/user-attachments/assets/f9049365-fdc6-47e5-b981-df6ae9897689" />
+
 
 
 Di replica:
