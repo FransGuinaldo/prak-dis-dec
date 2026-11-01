@@ -411,7 +411,6 @@ sql --file=/opt/ignite/sql/invoices.sql
 | `ee_and_cust.sql` | 8 dan 59 baris |
 | `invoices.sql` | 412, 1000, 1000, 240, 18, 1000 (8 kali), 715 baris |
 
-Sebelum `schema.sql` dijalankan, `system.tables` mengembalikan `(empty)`.
 
 <img width="402" height="493" alt="Screenshot 2026-11-01 105144" src="https://github.com/user-attachments/assets/86d3b3f7-f5a6-4464-83a1-441f5d0b3fb2" />
 <img width="378" height="253" alt="Screenshot 2026-11-01 105209" src="https://github.com/user-attachments/assets/357cd0f7-40eb-45c4-a392-bc99bc1f9c3e" />
