@@ -439,7 +439,8 @@ SELECT * FROM system.tables WHERE schema = 'PUBLIC';
 | GENRE | CHINOOKREPLICATED | GENREID |
 | INVOICE | CHINOOK | CUSTOMERID |
 
-<img width="1048" height="124" alt="image" src="https://github.com/user-attachments/assets/70b7390c-3ab7-44b3-828c-c3a4093d30d6" />
+<img width="1200" height="327" alt="Screenshot 2026-11-01 110354" src="https://github.com/user-attachments/assets/17981e50-0e9f-4f7a-bfc2-1ca4947d14ef" />
+
 
 
 ### 4.7 Verifikasi di node 2 (port 10301)
