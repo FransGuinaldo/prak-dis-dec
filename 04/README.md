@@ -453,7 +453,8 @@ Connected to http://localhost:10301
 
 Tabel `PUBLIC` yang sama (11 tabel) muncul di node 2.
 
-![system.tables node 2](img/20-system-tables-node2.png)
+<img width="1219" height="388" alt="Screenshot 2026-11-01 111338" src="https://github.com/user-attachments/assets/0dac03b5-1132-4e10-9b1d-313c3f8659f8" />
+
 
 Query analytics:
 
@@ -490,7 +491,9 @@ Hasil di node 2 (cuplikan):
 | ... | ... | ... | ... | ... |
 | 2020-01 | 6 | 6 | 35.64 | 5.9400000000000000 |
 
-<img width="1219" height="388" alt="Screenshot 2026-11-01 111338" src="https://github.com/user-attachments/assets/0dac03b5-1132-4e10-9b1d-313c3f8659f8" />
+<img width="423" height="773" alt="Screenshot 2026-11-01 112223" src="https://github.com/user-attachments/assets/8ea69c38-007d-495d-bb1b-8230388839e5" />
+<img width="423" height="773" alt="Screenshot 2026-11-01 112223" src="https://github.com/user-attachments/assets/f0ce65c9-bcc2-49f2-b154-0c7a785b758a" />
+<img width="423" height="773" alt="Screenshot 2026-11-01 112223" src="https://github.com/user-attachments/assets/e636d95a-7b89-476e-8a74-d7dc061d91d6" />
 
 
 ### 4.8 Verifikasi di node 3 (port 10302)
