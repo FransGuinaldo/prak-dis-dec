@@ -386,7 +386,8 @@ Cluster was initialized successfully
 
 `--metastorage-group` menentukan node yang menyimpan metadata cluster. Karena `--cluster-management-group` tidak diisi, node yang sama juga menjadi Cluster Management Group, sehingga metadata direplikasi di ketiga node.
 
-![cluster init dan status](img/16-cluster-init-status.png)
+<img width="563" height="68" alt="image" src="https://github.com/user-attachments/assets/71d916ca-a1a8-48f7-b4a0-ef1c257e143e" />
+
 
 ### 4.5 Menjalankan file SQL
 
