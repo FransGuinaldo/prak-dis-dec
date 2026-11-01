@@ -490,7 +490,8 @@ Hasil di node 2 (cuplikan):
 | ... | ... | ... | ... | ... |
 | 2020-01 | 6 | 6 | 35.64 | 5.9400000000000000 |
 
-![Analytics node 2](img/21-analytics-node2.png)
+<img width="1219" height="388" alt="Screenshot 2026-11-01 111338" src="https://github.com/user-attachments/assets/0dac03b5-1132-4e10-9b1d-313c3f8659f8" />
+
 
 ### 4.8 Verifikasi di node 3 (port 10302)
 
