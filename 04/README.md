@@ -506,7 +506,12 @@ Connected to http://localhost:10302
 
 Query analytics yang sama menghasilkan data **identik** dengan node 2 (2024-12: 7 invoice, 7 pelanggan, 38.62, 5.5171428571428571; 2024-11: 49.62; ... ; 2020-01: 35.64).
 
-![Analytics node 3](img/22-analytics-node3.png)
+<img width="486" height="694" alt="image" src="https://github.com/user-attachments/assets/96ad2399-0657-4447-94cf-5db6ea82bbaa" />
+<img width="325" height="708" alt="image" src="https://github.com/user-attachments/assets/bc343aea-9e2c-4111-9ee1-7fe059fbba6e" />
+<img width="402" height="392" alt="image" src="https://github.com/user-attachments/assets/7e2995ca-ba4b-4569-bd6d-74247489e7e6" />
+
+
+
 
 ### 4.9 Mematikan semua node
 
