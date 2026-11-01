@@ -416,8 +416,8 @@ sql --file=/opt/ignite/sql/invoices.sql
 <img width="378" height="253" alt="Screenshot 2026-11-01 105209" src="https://github.com/user-attachments/assets/357cd0f7-40eb-45c4-a392-bc99bc1f9c3e" />
 
 
+<img width="1200" height="327" alt="Screenshot 2026-11-01 110354" src="https://github.com/user-attachments/assets/8b8af7c2-f2dc-44e4-a410-54a7b3762264" />
 
-![File SQL data](img/18-sql-data.png)
 
 ### 4.6 Tabel di node 1
 
