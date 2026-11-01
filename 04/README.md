@@ -364,9 +364,8 @@ dps
 | `ignite3-node2-1` | 10301 | 10801 | 172.20.0.4 |
 | `ignite3-node3-1` | 10302 | 10802 | 172.20.0.2 |
 
-![dcu dan dps Ignite](img/14-dcu-dps-ignite.png)
+<img width="1183" height="631" alt="Screenshot 2026-11-01 104544" src="https://github.com/user-attachments/assets/f5738632-bbed-469d-8ca7-cbb18e864d69" />
 
-![docker inspect IP](img/15-docker-inspect-ip.png)
 
 > **Catatan:** pada Docker Desktop, jaringan bridge container umumnya tidak dapat dijangkau langsung dari WSL, sehingga `ping` ke IP container dapat gagal (`Destination Host Unreachable`). Hal ini tidak memengaruhi praktikum karena CLI terhubung lewat `localhost` dengan port yang dipetakan.
 
