@@ -523,7 +523,8 @@ dps
 
 Hasil yang diharapkan: ketiga container dan network `ignite3_default` berstatus `Removed`, dan `dps` kosong.
 
-![dcd dan dps Ignite](img/23-dcd-ignite.png)
+<img width="339" height="108" alt="image" src="https://github.com/user-attachments/assets/754810d5-effa-4025-b40c-416b5830f421" />
+
 
 ### 4.10 Pembahasan 4.2
 
@@ -543,31 +544,9 @@ Hasil yang diharapkan: ketiga container dan network `ignite3_default` berstatus 
 
 ---
 
-## 5. Kesesuaian dengan Modul
-
-| Langkah di modul | Hasil praktikum | Sesuai |
-|---|---|---|
-| Dua container PostgreSQL `healthy` (hal. 4) | Primary dan replica `(healthy)` | Ya |
-| Log replica (hal. 5) | `Connection refused` di awal, lalu `started streaming WAL from primary` | Ya |
-| `pg_stat_replication` (hal. 6) | `state = streaming`, `sync_state = async` | Ya |
-| `pg_replication_slots` (hal. 7) | `replication_slot`, `physical`, `active = t` | Ya |
-| `pg_is_in_recovery()` di replica (hal. 8) | `t` | Ya |
-| `testrep` dibuat di primary (hal. 9) | 2 baris | Ya |
-| Data muncul di replica (hal. 10) | Tabel dan 2 baris muncul | Ya |
-| Failover (hal. 11) | `t`, `t`, `f` | Ya |
-| `dcd` PostgreSQL (hal. 12) | Semua `Removed`, `dps` kosong | Ya |
-| 3 node Ignite, port 10300-10302 dan 10800-10802 (hal. 13) | Sama | Ya |
-| `cluster init` dan `cluster status` (hal. 15) | `nodes: 3, status: active` | Ya |
-| `schema.sql` dan file SQL lain (hal. 17, 19) | Jumlah baris sama persis | Ya |
-| `system.tables` (hal. 18) | 11 tabel, dua zona | Ya |
-| Query analytics node 2 dan node 3 (hal. 21, 22) | Hasil identik, 2024-12 = 38.62 | Ya |
-| `dcd` Ignite (hal. 22) | Dijalankan di akhir praktikum | Lihat bagian 4.9 |
-
-**Perbedaan wajar:** port replica 5434 (bukan 5433), nama container `streaming-replication-...` (bukan `src-...`), tanpa `sudo`, serta ID container, IP, dan waktu yang berbeda.
-
 ---
 
-## 6. Kendala dan Solusi
+## 5. Kendala dan Solusi
 
 | No | Kendala | Penyebab | Solusi |
 |---|---|---|---|
@@ -589,34 +568,6 @@ Hasil yang diharapkan: ketiga container dan network `ignite3_default` berstatus 
 
 ---
 
-## Lampiran: Daftar Screenshot
-
-| No | File | Isi |
-|---|---|---|
-| 1 | `img/00-versi-docker.png` | Versi Docker dan Compose |
-| 2 | `img/01-struktur-file.png` | `ls -la` tiga file PostgreSQL |
-| 3 | `img/02-error-port-5433.png` | Galat port 5433 bentrok |
-| 4 | `img/03-dcu-dps-healthy.png` | `dcu` dan `dps` (healthy) |
-| 5 | `img/04-log-replica.png` | Log replica (`dlr`) |
-| 6 | `img/05-pg-stat-replication.png` | `pg_stat_replication` |
-| 7 | `img/06-pg-replication-slots.png` | `pg_replication_slots` dan `\dt` kosong |
-| 8 | `img/07-replica-in-recovery.png` | `pg_is_in_recovery()` = t di replica |
-| 9 | `img/08-primary-create-insert.png` | Membuat dan mengisi `testrep` di primary |
-| 10 | `img/09-replica-testrep.png` | Data `testrep` di replica |
-| 11 | `img/10-stop-primary.png` | Primary dihentikan |
-| 12 | `img/11-pg-promote.png` | `pg_promote()` dan status recovery |
-| 13 | `img/12-dcd-postgres.png` | `dcd` dan `dps` kosong (PostgreSQL) |
-| 14 | `img/13-tree-sql.png` | `unzip` dan `tree sql/` |
-| 15 | `img/14-dcu-dps-ignite.png` | `dcu` dan `dps` Ignite |
-| 16 | `img/15-docker-inspect-ip.png` | IP tiap node Ignite |
-| 17 | `img/16-cluster-init-status.png` | `cluster init` dan `cluster status` |
-| 18 | `img/17-sql-schema.png` | Hasil `schema.sql` |
-| 19 | `img/18-sql-data.png` | Hasil file SQL data |
-| 20 | `img/19-system-tables-node1.png` | `system.tables` di node 1 |
-| 21 | `img/20-system-tables-node2.png` | `system.tables` di node 2 |
-| 22 | `img/21-analytics-node2.png` | Query analytics di node 2 |
-| 23 | `img/22-analytics-node3.png` | Query analytics di node 3 |
-| 24 | `img/23-dcd-ignite.png` | `dcd` dan `dps` kosong (Ignite) |
 
 ## Referensi
 
