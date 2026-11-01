@@ -345,7 +345,8 @@ sql/
 ```
 
 <img width="1200" height="194" alt="image" src="https://github.com/user-attachments/assets/6afa2197-6d78-465e-9010-364c99f60850" />
-<img width="1200" height="194" alt="image" src="https://github.com/user-attachments/assets/6202a4e9-a394-4056-87f4-4761822c7383" />
+<img width="456" height="246" alt="Screenshot 2026-10-31 100045" src="https://github.com/user-attachments/assets/c89748f6-ce66-47b0-b0bb-dcb3d75367a3" />
+
 
 
 
