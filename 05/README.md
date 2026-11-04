@@ -61,6 +61,11 @@ Installed 16 packages in 85ms
 ```
 
 
+<img width="1097" height="428" alt="image" src="https://github.com/user-attachments/assets/4fb24925-295c-4d4c-bfac-3735a48ddae1" />
+
+<img width="1097" height="428" alt="image" src="https://github.com/user-attachments/assets/7a537ce8-e490-41b1-ad79-6b6451caa236" />
+
+
 
 
 #### 2. Pembuatan Project dan Dependensi Template
