@@ -94,7 +94,13 @@ Project baru `blacksheep_lb` dibuat menggunakan alat bantu `blacksheep-cli` deng
 #### 3. Pengujian Multi-Instance Scaling
 Aplikasi dijalankan dalam 2 instance terpisah untuk mensimulasikan lingkungan terdistribusi (*cluster*):
 - **Instance 1**: Berjalan pada `http://localhost:44777`
+  <img width="1179" height="789" alt="Screenshot 2026-11-04 093342" src="https://github.com/user-attachments/assets/30dff545-8065-445f-ba26-c959f356d61e" />
+
+
 - **Instance 2**: Berjalan pada `http://localhost:44778`
+<img width="1062" height="698" alt="Screenshot 2026-11-04 093413" src="https://github.com/user-attachments/assets/b970598e-79f9-4a42-ae95-8b87f0a01650" />
+
+
 
 **Log Eksekusi Server (Instance 1):**
 ```powershell
