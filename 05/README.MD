@@ -60,7 +60,8 @@ Installed 16 packages in 85ms
  + uvicorn==0.54.0
 ```
 
-Screenshot 2026-11-04 090050.png
+
+
 
 #### 2. Pembuatan Project dan Dependensi Template
 Project baru `blacksheep_lb` dibuat menggunakan alat bantu `blacksheep-cli` dengan struktur *Model-View-Controller* (MVC).
