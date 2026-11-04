@@ -67,8 +67,8 @@ Aplikasi dijalankan dalam 2 instance terpisah untuk mensimulasikan lingkungan te
 
 
 
-**Log Eksekusi Server (Instance 1):**
 
+**Log Eksekusi Server (Instance 1):**
 <img width="1086" height="614" alt="Screenshot 2026-11-04 214908" src="https://github.com/user-attachments/assets/05a12b28-8165-4a3e-b47f-b9e0efd2d64a" />
 <img width="752" height="610" alt="Screenshot 2026-11-04 215009" src="https://github.com/user-attachments/assets/638b1c57-32c7-4c41-a98b-816d97dcb8a6" />
 <img width="749" height="558" alt="Screenshot 2026-11-04 215108" src="https://github.com/user-attachments/assets/5da2de7d-e581-410a-92d6-6e94d866c562" />
