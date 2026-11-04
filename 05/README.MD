@@ -59,7 +59,7 @@ Installed 16 packages in 85ms
  + blacksheep==2.6.4
  + uvicorn==0.54.0
 ```
-
+https://github.com/FransGuinaldo/prak-dis-dec/blob/main/05/image/Screenshot%202026-11-04%20090050.png?raw=true
 
 #### 2. Pembuatan Project dan Dependensi Template
 Project baru `blacksheep_lb` dibuat menggunakan alat bantu `blacksheep-cli` dengan struktur *Model-View-Controller* (MVC).
