@@ -3,10 +3,14 @@
 
 ---
 
-**Nama Mahasiswa** : Francisco G I dc Corbafo  
+**Nama Mahasiswa** : Francisco G I dc Corbafo
+
 **NIM**            : 255410003 
+
 **Program Studi**  : Informatika 
+
 **Dosen Pengampu** : Bambang Purnomosidi D.P., Dr., S.E., Ak., S.Kom., MMSI. 
+
 **Tanggal**        : 4 November 2026  
 
 ---
