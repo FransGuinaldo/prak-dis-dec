@@ -85,6 +85,9 @@ Project baru `blacksheep_lb` dibuat menggunakan alat bantu `blacksheep-cli` deng
 
 (kikuc) PS C:\Users\kikuc\workspace-05\blacksheep_lb> uv pip install -r requirements.txt
 ```
+<img width="780" height="619" alt="Screenshot 2026-11-04 092610" src="https://github.com/user-attachments/assets/f0a99b84-4e2e-4ca6-b19a-ce01c32a3898" />
+<img width="780" height="619" alt="Screenshot 2026-11-04 092610" src="https://github.com/user-attachments/assets/9361b2a9-17ed-4bd3-8c69-4b21b6afcea3" />
+
 
 #### 3. Pengujian Multi-Instance Scaling
 Aplikasi dijalankan dalam 2 instance terpisah untuk mensimulasikan lingkungan terdistribusi (*cluster*):
