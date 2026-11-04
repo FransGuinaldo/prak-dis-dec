@@ -3,7 +3,7 @@
 
 ---
 
-**Nama Mahasiswa** : Francisco G I dc Corbafo
+**Nama** : Francisco G I dc Corbafo
 
 **NIM**            : 255410003 
 
