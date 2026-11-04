@@ -117,9 +117,6 @@ INFO:     ::1:51642 - "GET / HTTP/1.1" 200 OK
 INFO:     ::1:53491 - "GET /styles/public.css HTTP/1.1" 200 OK
 ```
 
-<img width="1487" height="738" alt="Screenshot 2026-11-04 214338" src="https://github.com/user-attachments/assets/4335942e-4966-4742-95e2-bd4b8249a515" />
-<img width="1498" height="733" alt="Screenshot 2026-11-04 214404" src="https://github.com/user-attachments/assets/c723e606-e265-4fc1-8424-ac931f5d042f" />
-<img width="1016" height="628" alt="Screenshot 2026-11-04 214422" src="https://github.com/user-attachments/assets/1dc52f1c-d982-43f4-934c-281f6e4b8367" />
 
 
 
