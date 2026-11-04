@@ -159,6 +159,9 @@ Memulai pemeriksaan kesehatan server (Health Check)...
 [ONLINE] Server http://localhost:44777 berjalan normal (Status: 200 OK)
 [ONLINE] Server http://localhost:44778 berjalan normal (Status: 200 OK)
 ```
+<img width="1048" height="658" alt="Screenshot 2026-11-04 213628" src="https://github.com/user-attachments/assets/4d09dc1e-2fce-4ef4-a70a-975a45d53f20" />
+<img width="1048" height="658" alt="Screenshot 2026-11-04 213628" src="https://github.com/user-attachments/assets/ecc073fe-e49c-41b2-b945-486f75877079" />
+
 
 ---
 
