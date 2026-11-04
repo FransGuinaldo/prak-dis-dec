@@ -36,30 +36,6 @@
 Langkah awal dimulai dengan menginstal `uv`, mematok versi Python ke 3.11, serta mengonfigurasi *virtual environment*.
 
 **Log Eksekusi Terminal:**
-```powershell
-PS C:\Users\kikuc> powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-downloading uv 0.13.7 (x86_64-pc-windows-msvc)
-installing to C:\Users\kikuc\.local\bin                                                                                         
-  uv.exe                                                                                                                        
-  uvx.exe                                                                                                                       
-  uvw.exe                                                                                                                       
-everything's installed!                                                                                                         
-
-PS C:\Users\kikuc> uv python pin 3.11
-Pinned `.python-version` to `3.11`
-
-PS C:\Users\kikuc> uv venv
-Using CPython 3.11.18
-Creating virtual environment at: .venv
-Activate with: .venv\Scripts\activate
-
-PS C:\Users\kikuc> .venv\Scripts\Activate
-(kikuc) PS C:\Users\kikuc> uv pip install blacksheep uvicorn
-Installed 16 packages in 85ms
- + blacksheep==2.6.4
- + uvicorn==0.54.0
-```
-
 
 <img width="1097" height="428" alt="image" src="https://github.com/user-attachments/assets/4fb24925-295c-4d4c-bfac-3735a48ddae1" />
 
@@ -72,19 +48,7 @@ Installed 16 packages in 85ms
 Project baru `blacksheep_lb` dibuat menggunakan alat bantu `blacksheep-cli` dengan struktur *Model-View-Controller* (MVC).
 
 **Log Eksekusi Terminal:**
-```powershell
-(kikuc) PS C:\Users\kikuc\workspace-05> uv pip install blacksheep-cli
-(kikuc) PS C:\Users\kikuc\workspace-05> blacksheep create
-✨ Project name: blacksheep_lb
-🚀 Project template: mvc
-📜 Use OpenAPI Documentation? Yes
-🔧 Library to read settings essentials-configuration
-🔩 App settings format TOML
 
-🏗️  Project created in blacksheep_lb
-
-(kikuc) PS C:\Users\kikuc\workspace-05\blacksheep_lb> uv pip install -r requirements.txt
-```
 <img width="780" height="619" alt="Screenshot 2026-11-04 092610" src="https://github.com/user-attachments/assets/f0a99b84-4e2e-4ca6-b19a-ce01c32a3898" />
 
 <img width="659" height="525" alt="Screenshot 2026-11-04 092726" src="https://github.com/user-attachments/assets/2bcf3d77-27dc-47c5-a3af-ec2e2479f01b" />
@@ -104,18 +68,7 @@ Aplikasi dijalankan dalam 2 instance terpisah untuk mensimulasikan lingkungan te
 
 
 **Log Eksekusi Server (Instance 1):**
-```powershell
-(kikuc) PS C:\Users\kikuc\workspace-05\blacksheep_lb> python dev.py
-Running for local development ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-Visit http://localhost:44777/
 
-INFO:     Started server process [4560]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://localhost:44777 (Press CTRL+C to quit)
-INFO:     ::1:51642 - "GET / HTTP/1.1" 200 OK
-INFO:     ::1:53491 - "GET /styles/public.css HTTP/1.1" 200 OK
-```
 <img width="1086" height="614" alt="Screenshot 2026-11-04 214908" src="https://github.com/user-attachments/assets/05a12b28-8165-4a3e-b47f-b9e0efd2d64a" />
 <img width="752" height="610" alt="Screenshot 2026-11-04 215009" src="https://github.com/user-attachments/assets/638b1c57-32c7-4c41-a98b-816d97dcb8a6" />
 <img width="749" height="558" alt="Screenshot 2026-11-04 215108" src="https://github.com/user-attachments/assets/5da2de7d-e581-410a-92d6-6e94d866c562" />
@@ -159,13 +112,7 @@ if __name__ == "__main__":
 ```
 
 **Hasil Pengujian Terminal:**
-```powershell
-PS C:\Users\kikuc> python health_check.py
-Memulai pemeriksaan kesehatan server (Health Check)...
 
-[ONLINE] Server http://localhost:44777 berjalan normal (Status: 200 OK)
-[ONLINE] Server http://localhost:44778 berjalan normal (Status: 200 OK)
-```
 <img width="1048" height="658" alt="Screenshot 2026-11-04 213628" src="https://github.com/user-attachments/assets/4d09dc1e-2fce-4ef4-a70a-975a45d53f20" />
 <img width="803" height="159" alt="Screenshot 2026-11-04 213653" src="https://github.com/user-attachments/assets/e914d970-84ee-4a3e-982f-c65dd53591fb" />
 
@@ -241,17 +188,8 @@ if __name__ == "__main__":
 ```
 
 **Hasil Pengujian Terminal (`load_balancer.py`):**
-```powershell
-PS C:\Users\kikuc\workspace-05\blacksheep_lb> ..\..\.venv\Scripts\python.exe load_balancer.py
-Memulai Load Balancer di http://localhost:8000 ...
-INFO:     Started server process [9760]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     127.0.0.1:55344 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55344 - "GET /favicon.ico HTTP/1.1" 204 No Content
-INFO:     127.0.0.1:55344 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55344 - "GET /favicon.ico HTTP/1.1" 204 No Content
+<img width="1044" height="386" alt="image" src="https://github.com/user-attachments/assets/08e192ba-3a41-497d-9b54-23789fc2eb6c" />
+
 ```
 
 ---
