@@ -86,7 +86,9 @@ Project baru `blacksheep_lb` dibuat menggunakan alat bantu `blacksheep-cli` deng
 (kikuc) PS C:\Users\kikuc\workspace-05\blacksheep_lb> uv pip install -r requirements.txt
 ```
 <img width="780" height="619" alt="Screenshot 2026-11-04 092610" src="https://github.com/user-attachments/assets/f0a99b84-4e2e-4ca6-b19a-ce01c32a3898" />
-<img width="780" height="619" alt="Screenshot 2026-11-04 092610" src="https://github.com/user-attachments/assets/9361b2a9-17ed-4bd3-8c69-4b21b6afcea3" />
+
+<img width="659" height="525" alt="Screenshot 2026-11-04 092726" src="https://github.com/user-attachments/assets/2bcf3d77-27dc-47c5-a3af-ec2e2479f01b" />
+
 
 
 #### 3. Pengujian Multi-Instance Scaling
