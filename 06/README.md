@@ -38,7 +38,7 @@ File dipecah menjadi **block** dan direplikasi sesuai `dfs.replication`. Pada pr
 | Apache Hadoop | 3.5.0 (binary x86_64) |
 | pdsh | 2.35 |
 | OpenSSH | 10.2p1 |
-| Username Linux | `franguinaldo` |
+| Username Linux | `guinaldoinacio` |
 
 **Alasan memakai WSL2:** modul mensyaratkan JDK 17 atau 21 dan memakai skrip bash (`start-dfs.sh`), `pdsh`, dan `sshd`. Komputer host memiliki Java 25 dan berjalan di Windows. Dengan WSL2, JDK 17 dipasang terpisah di dalam Ubuntu sehingga Java 25 di Windows tidak terganggu dan seluruh langkah modul dapat diikuti.
 
@@ -50,9 +50,7 @@ Di PowerShell (Administrator):
 
 ```powershell
 wsl --install -d Ubuntu
-```
-
-Setelah selesai, dibuat akun pengguna Linux `franguinaldo`.
+```<img width="1197" height="738" alt="Screenshot 2026-11-08 060549" src="https://github.com/user-attachments/assets/6f285bd8-649c-404b-a329-c3bd6e92d524" />
 
 ### 4.2 Pemasangan paket, JDK 17, dan layanan SSH
 
