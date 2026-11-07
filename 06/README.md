@@ -91,8 +91,8 @@ chmod 700 ~/.ssh
 chmod 0600 ~/.ssh/authorized_keys
 ssh localhost
 ```
+<img width="806" height="673" alt="Screenshot 2026-11-08 064259" src="https://github.com/user-attachments/assets/a6f00627-486f-481f-b963-aa1cc5e3a2e6" />
 
-Setelah kunci didaftarkan, login langsung masuk tanpa meminta password (terlihat dari banner "Welcome to Ubuntu 26.04.1 LTS" dan baris `Last login ... from 127.0.0.1`).
 
 ### 4.4 Unduh dan ekstraksi Hadoop
 
