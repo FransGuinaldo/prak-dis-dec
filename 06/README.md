@@ -67,6 +67,7 @@ openjdk version "17.0.20.1" 2026-08-18
 OpenJDK Runtime Environment (build 17.0.20.1+1-1-26.04-Ubuntu)
 OpenJDK 64-Bit Server VM (build 17.0.20.1+1-1-26.04-Ubuntu, mixed mode, sharing)
 ```
+<img width="1048" height="124" alt="image" src="https://github.com/user-attachments/assets/c6982b0f-2555-44e1-b6b2-764eb8d8b178" />
 
 `pdsh` diarahkan memakai SSH, lalu layanan SSH dijalankan dan diperiksa:
 
