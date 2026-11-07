@@ -50,7 +50,9 @@ Di PowerShell (Administrator):
 
 ```powershell
 wsl --install -d Ubuntu
-```<img width="1197" height="738" alt="Screenshot 2026-11-08 060549" src="https://github.com/user-attachments/assets/6f285bd8-649c-404b-a329-c3bd6e92d524" />
+```
+<img width="1197" height="738" alt="Screenshot 2026-11-08 060549" src="https://github.com/user-attachments/assets/18c2cacb-6c24-40c9-8678-33d9e80a4efa" />
+
 
 ### 4.2 Pemasangan paket, JDK 17, dan layanan SSH
 
