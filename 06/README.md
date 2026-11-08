@@ -179,6 +179,8 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 > `mapred-site.xml` dan `yarn-site.xml` pada modul tidak dikonfigurasi karena praktikum ini hanya menjalankan HDFS, bukan YARN.
 
 Verifikasi konfigurasi:
+
+
 <img width="789" height="456" alt="Screenshot 2026-11-08 064513" src="https://github.com/user-attachments/assets/61ace402-6260-4ba8-b763-a44b3de2dd53" />
 
 
