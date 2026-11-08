@@ -114,8 +114,8 @@ lrwxrwxrwx  1 franguinaldo franguinaldo        12 Nov  6 16:46 hadoop -> hadoop-
 drwxr-xr-x 11 franguinaldo franguinaldo      4096 Mar 25  2026 hadoop-3.5.0
 -rw-r--r--  1 franguinaldo franguinaldo 581280703 Apr  2  2026 hadoop-3.5.0.tar.gz
 ```
-<img width="1499" height="472" alt="Screenshot 2026-11-08 064558" src="https://github.com/user-attachments/assets/3ef7906b-686e-4ae4-9a9b-af8c4ac5e5f8" />
-<img width="1527" height="497" alt="Screenshot 2026-11-08 064626" src="https://github.com/user-attachments/assets/aa8629f6-9004-4f9f-a154-b33c76c69768" />
+<img width="1562" height="593" alt="Screenshot 2026-11-08 125347" src="https://github.com/user-attachments/assets/5699cc1d-2569-40de-87bb-8ab0ce778d57" />
+<img width="1179" height="649" alt="Screenshot 2026-11-08 125413" src="https://github.com/user-attachments/assets/fe524a8b-a3e6-479a-82ee-072ab20c2732" />
 
 
 ### 4.5 Variabel lingkungan
