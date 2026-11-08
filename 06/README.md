@@ -237,6 +237,7 @@ Isi `airtravel.csv` yang dibaca dari HDFS:
 <img width="1016" height="843" alt="Screenshot 2026-11-08 132154" src="https://github.com/user-attachments/assets/d71b2edc-b6b3-49b7-ad27-99cccb1f44e4" />
 
 
+
 ## 6. Pembahasan
 
 **Mode pseudo-distributed.** Seluruh daemon HDFS berjalan di satu mesin. Nilai `dfs.replication=1` dipilih karena hanya ada satu DataNode; pada klaster produksi nilainya umumnya 3 agar data tetap aman bila satu node gagal. Hal ini terlihat pada kolom replikasi bernilai `1` di daftar file HDFS.
