@@ -79,6 +79,8 @@ sudo service ssh status
 ```
 
 Status layanan: `active (running)`, mendengarkan pada port 22.
+<img width="826" height="376" alt="Screenshot 2026-11-08 124608" src="https://github.com/user-attachments/assets/afdc83c2-d882-451a-9a4c-4b414d80e216" />
+
 
 ### 4.3 Konfigurasi SSH tanpa password ke localhost
 
