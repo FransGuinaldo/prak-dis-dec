@@ -219,46 +219,19 @@ hdfs dfs -mkdir -p /user/franguinaldo/datasets
 **Tugas 2: mengunduh 3 file CSV dan menyalinnya ke direktori tersebut**
 
 Tiga file CSV diunduh dari `people.sc.fsu.edu`, lalu disalin ke HDFS dan diperiksa:
+<img width="1512" height="659" alt="image" src="https://github.com/user-attachments/assets/741f835d-63dd-4a3b-ae14-1df1cb7fb5f1" />
+<img width="1555" height="388" alt="image" src="https://github.com/user-attachments/assets/1d75d99d-46b8-4ca9-8cc1-e830af01f0e6" />
 
-```bash
-mkdir -p ~/csv && cd ~/csv
-wget -4 -c --tries=5 https://people.sc.fsu.edu/~jburkardt/data/csv/airtravel.csv
-wget -4 -c --tries=5 https://people.sc.fsu.edu/~jburkardt/data/csv/addresses.csv
-wget -4 -c --tries=5 https://people.sc.fsu.edu/~jburkardt/data/csv/biostats.csv
-hdfs dfs -put ~/csv/*.csv /user/franguinaldo/datasets/
-hdfs dfs -ls /user/franguinaldo/datasets
-hdfs dfs -cat /user/franguinaldo/datasets/airtravel.csv
-```
+
 
 Isi direktori `datasets` di HDFS:
+<img width="1256" height="115" alt="image" src="https://github.com/user-attachments/assets/f050da1e-c3a2-49f8-bbb5-47738fc61d2d" />
 
-```
-Found 3 items
--rw-r--r--   1 franguinaldo supergroup        328 2026-11-06 16:52 /user/franguinaldo/datasets/addresses.csv
--rw-r--r--   1 franguinaldo supergroup        321 2026-11-06 16:52 /user/franguinaldo/datasets/airtravel.csv
--rw-r--r--   1 franguinaldo supergroup        849 2026-11-06 16:52 /user/franguinaldo/datasets/biostats.csv
-```
+
 
 Isi `airtravel.csv` yang dibaca dari HDFS:
+<img width="1144" height="371" alt="image" src="https://github.com/user-attachments/assets/ce29305d-85d4-4d53-850a-d4d8f6328a00" />
 
-```
-"Month", "1958", "1959", "1960"
-"JAN",  340,  360,  417
-"FEB",  318,  342,  391
-"MAR",  362,  406,  419
-"APR",  348,  396,  461
-"MAY",  363,  420,  472
-"JUN",  435,  472,  535
-"JUL",  491,  548,  622
-"AUG",  505,  559,  606
-"SEP",  404,  463,  508
-"OCT",  359,  407,  461
-"NOV",  310,  362,  390
-"DEC",  337,  405,  432
-```
-
-> **[Sisipkan tangkapan layar: output daftar file di HDFS]**
-> **[Sisipkan tangkapan layar: web UI *Utilities → Browse the file system* pada `/user/franguinaldo/datasets`]**
 
 ## 5. Hasil
 
