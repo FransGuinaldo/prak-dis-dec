@@ -126,8 +126,9 @@ File `~/env/bash/storage/hadoop.sh` berisi:
 export HADOOP_HOME="$HOME/software/storage/hadoop"
 export PATH="$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH"
 ```
+<img width="838" height="112" alt="image" src="https://github.com/user-attachments/assets/3ebf2e80-1804-4d16-a841-d1cdf2dea50e" />
 
-File ini dimuat otomatis setiap terminal dibuka dengan menambahkan baris `source ~/env/bash/storage/hadoop.sh` ke `~/.bashrc`.
+
 
 ### 4.6 Konfigurasi Hadoop
 
@@ -178,18 +179,8 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 > `mapred-site.xml` dan `yarn-site.xml` pada modul tidak dikonfigurasi karena praktikum ini hanya menjalankan HDFS, bukan YARN.
 
 Verifikasi konfigurasi:
+<img width="789" height="456" alt="Screenshot 2026-11-08 064513" src="https://github.com/user-attachments/assets/61ace402-6260-4ba8-b763-a44b3de2dd53" />
 
-```bash
-hadoop version
-hdfs getconf -confKey fs.defaultFS
-hdfs getconf -confKey dfs.namenode.name.dir
-```
-
-```
-Hadoop 3.5.0
-hdfs://localhost:9000
-file:///home/franguinaldo/hadoop-data/namenode
-```
 
 ### 4.7 Format NameNode dan menjalankan HDFS
 
@@ -210,15 +201,18 @@ jps
 
 Ketiga daemon HDFS berjalan. Pemantauan dilakukan melalui web UI di `http://localhost:9870`.
 
-> **[Sisipkan tangkapan layar: halaman Overview web UI dengan status *active*]**
+<img width="689" height="227" alt="image" src="https://github.com/user-attachments/assets/7011aecb-7bc1-4c54-97d4-3ca071bc00c8" />
+
 
 ### 4.8 Mengerjakan tugas
-
 **Tugas 1: membuat direktori `/user/<nama-user>/datasets` di HDFS**
 
 ```bash
 hdfs dfs -mkdir -p /user/franguinaldo/datasets
 ```
+<img width="1499" height="472" alt="Screenshot 2026-11-08 064558" src="https://github.com/user-attachments/assets/a4c76d76-0986-45b2-8823-3ab1e1d90569" />
+<img width="1527" height="497" alt="Screenshot 2026-11-08 064626" src="https://github.com/user-attachments/assets/1937fb60-2935-4ecd-88c2-1832d8cdbd9e" />
+
 
 **Tugas 2: mengunduh 3 file CSV dan menyalinnya ke direktori tersebut**
 
