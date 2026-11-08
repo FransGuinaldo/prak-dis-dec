@@ -234,16 +234,8 @@ Isi `airtravel.csv` yang dibaca dari HDFS:
 
 
 ## 5. Hasil
+<img width="1016" height="843" alt="Screenshot 2026-11-08 132154" src="https://github.com/user-attachments/assets/d71b2edc-b6b3-49b7-ad27-99cccb1f44e4" />
 
-| Item | Status |
-|---|---|
-| JDK 17 terpasang | Berhasil |
-| SSH tanpa password ke localhost | Berhasil |
-| Hadoop 3.5.0 terpasang dan terkonfigurasi | Berhasil |
-| NameNode diformat | Berhasil |
-| NameNode, DataNode, SecondaryNameNode berjalan | Berhasil |
-| Tugas 1: direktori `datasets` | Berhasil |
-| Tugas 2: 3 file CSV tersalin ke HDFS (328, 321, dan 849 byte) | Berhasil |
 
 ## 6. Pembahasan
 
