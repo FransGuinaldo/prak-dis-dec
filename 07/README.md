@@ -34,7 +34,9 @@ Cloud Computing menggunakan pendekatan XaaS (*Everything as a Service*). Penyedi
 
 ### 0.3 Arsitektur XaaS
 
-![Arsitektur XaaS: pembagian tanggung jawab IaaS, PaaS, SaaS](img/00-arsitektur-xaas.png)
+![Arsitektur XaaS: pembagian tanggung jawab IaaS, PaaS, SaaS]
+<img width="1266" height="658" alt="image" src="https://github.com/user-attachments/assets/6d5972cd-c0f0-4fb2-807a-32ecb7a7771d" />
+
 
 | Lapisan | IaaS | PaaS | SaaS |
 |---|---|---|---|
