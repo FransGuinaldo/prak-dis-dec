@@ -354,9 +354,10 @@ Press CTRL+C to quit
 172.17.0.1 - - [15/Nov/2026 03:56:44] "GET /auth/login HTTP/1.1" 200 -
 ```
 
-![docker run](img/12-docker-run.png)
+<img width="1527" height="430" alt="image" src="https://github.com/user-attachments/assets/98a0909b-8c50-49d8-8e8a-af9bdd12e542" />
 
-![Flaskr di localhost:5001 (Docker)](img/13-browser-5001-docker.png)
+
+
 
 Keterangan log:
 
