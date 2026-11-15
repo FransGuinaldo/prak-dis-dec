@@ -1,4 +1,4 @@
-# Laporan Praktikum Modul 7: Cloud Computing
+<img width="1048" height="624" alt="image" src="https://github.com/user-attachments/assets/e1521feb-0401-4413-beaf-fc7e46786610" /><img width="1048" height="624" alt="image" src="https://github.com/user-attachments/assets/48194124-4525-4321-be09-1fd6eb432668" /># Laporan Praktikum Modul 7: Cloud Computing
 
 | | |
 |---|---|
@@ -169,7 +169,10 @@ drwxr-xr-x 4 guinaldoinacio guinaldoinacio 4096 Nov 15 10:46 flaskr
 drwxr-xr-x 2 guinaldoinacio guinaldoinacio 4096 Nov 15 10:46 tests
 ```
 
-![git clone dan ls -la](img/04-clone-dan-ls.png)
+<img width="1048" height="624" alt="Screenshot 2026-11-15 115302" src="https://github.com/user-attachments/assets/2648d04a-bd0e-4b2b-9364-bdc64e14e147" />
+
+
+
 
 ---
 
