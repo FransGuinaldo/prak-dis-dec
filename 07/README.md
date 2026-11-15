@@ -244,6 +244,8 @@ Press CTRL+C to quit
 ```
 
 <img width="1531" height="203" alt="image" src="https://github.com/user-attachments/assets/56c96df0-5361-4d8f-b3d7-474cc837e4c0" />
+<img width="1048" height="134" alt="image" src="https://github.com/user-attachments/assets/ed036cfe-8222-4042-8a89-553bfcb79e9f" />
+
 
 
 Aplikasi diakses melalui `http://localhost:5000`.
