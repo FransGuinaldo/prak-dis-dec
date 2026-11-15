@@ -1,4 +1,4 @@
-<img width="1048" height="624" alt="image" src="https://github.com/user-attachments/assets/e1521feb-0401-4413-beaf-fc7e46786610" /><img width="1048" height="624" alt="image" src="https://github.com/user-attachments/assets/48194124-4525-4321-be09-1fd6eb432668" /># Laporan Praktikum Modul 7: Cloud Computing
+# Laporan Praktikum Modul 7: Cloud Computing
 
 | | |
 |---|---|
