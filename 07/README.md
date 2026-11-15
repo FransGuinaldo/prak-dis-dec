@@ -90,6 +90,8 @@ sudo apt install -y git curl podman
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc
 ```
+<img width="1527" height="689" alt="image" src="https://github.com/user-attachments/assets/4674c081-47b6-46c3-a0eb-32202254899e" />
+
 
 Pemasangan `podman` menarik 36 paket baru (termasuk `buildah`, `crun`, `netavark`, dan `conmon`) serta memperbarui `git` dan `curl`. Pengecekan versi:
 
