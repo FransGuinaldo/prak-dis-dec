@@ -6,8 +6,8 @@
 | **NIM** | (255410003) |
 | **Mata kuliah** | Sistem Terdistribusi dan Terdesentralisasi |
 | **Modul** | Modul 7: Cloud Computing |
-| **Dosen penyusun modul** | Dr. Bambang Purnomosidi D. P. |
-| **Program studi** | Informatika, Universitas Teknologi Digital Indonesia |
+| **Dosen penyusun modul** | Bambang Purnomosidi D.P., Dr., S.E., Ak., S.Kom., MMSI.|
+| **Prodi** | Informatika |
 | **Tanggal praktikum** | 15 November 2026 |
 
 ---
