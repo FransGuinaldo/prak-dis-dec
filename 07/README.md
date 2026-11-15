@@ -103,8 +103,8 @@ podman version 5.7.0
 $ docker --version
 Docker version 29.9.2, build a82e528
 ```
+<img width="568" height="187" alt="image" src="https://github.com/user-attachments/assets/fca88eb8-5a89-4b7a-ab90-dd569213c14a" />
 
-![Versi alat yang terpasang](img/02-versi-alat.png)
 
 ### 1.3 Kendala Docker dan penyelesaiannya
 
