@@ -76,8 +76,10 @@ PS C:\Users\kikuc> wsl -l -v
   docker-desktop    Stopped         2
 PS C:\Users\kikuc> wsl -d ubuntu
 ```
+<img width="607" height="157" alt="image" src="https://github.com/user-attachments/assets/84f0824d-a37c-4704-a4c1-e53dff1d8a21" />
+<img width="1239" height="694" alt="image" src="https://github.com/user-attachments/assets/a2a7a505-ae5d-4525-89df-232526441b31" />
 
-![Hasil wsl -l -v](img/01-wsl-list.png)
+
 
 ### 1.2 Memasang alat
 
