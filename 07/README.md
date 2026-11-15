@@ -126,6 +126,9 @@ Setelah integrasi WSL diaktifkan di Docker Desktop (*Settings > Resources > WSL 
 permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
 ```
 
+<img width="1191" height="673" alt="image" src="https://github.com/user-attachments/assets/eaac9474-b519-4edc-80ed-b29035a4113f" />
+
+
 Penyebabnya adalah user belum menjadi anggota grup `docker` (keluaran `groups` tidak memuat `docker`). Seluruh perintah Docker pada praktikum ini dijalankan dengan `sudo`, sama seperti pada modul:
 
 ```text
