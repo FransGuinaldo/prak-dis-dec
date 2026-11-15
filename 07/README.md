@@ -414,7 +414,12 @@ Successfully tagged localhost/flaskr:1.0.0
 
 Peringatan `"/" is not a shared mount` muncul karena Podman rootless di WSL2, dan tidak menghalangi proses build. Peringatan `Running pip as the 'root' user` di dalam build juga wajar karena pip berjalan sebagai root di dalam container.
 
-![podman build](img/15-podman-build.png)
+<img width="1261" height="89" alt="image" src="https://github.com/user-attachments/assets/1962f03a-31a2-46ce-8144-f078d057777c" />
+<img width="1368" height="577" alt="image" src="https://github.com/user-attachments/assets/ed46a6b3-45b4-475c-a87c-1dee670d9432" />
+<img width="1730" height="486" alt="image" src="https://github.com/user-attachments/assets/49085b24-9fb4-4960-9f5c-2c21653f6331" />
+
+
+
 
 ```bash
 podman image ls
@@ -426,7 +431,8 @@ localhost/flaskr          1.0.0       0d116eb4e384  1 second ago  1.17 GB
 docker.io/library/python  3.14        78689ccd8331  9 days ago    1.14 GB
 ```
 
-![podman image ls](img/16-podman-image-ls.png)
+<img width="995" height="154" alt="image" src="https://github.com/user-attachments/assets/bd226881-7099-4149-97bb-2d2be6a0f453" />
+
 
 Menjalankan container:
 
@@ -444,7 +450,8 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 ```
 
-![podman run](img/17-podman-run.png)
+<img width="1538" height="180" alt="image" src="https://github.com/user-attachments/assets/e36a3ccb-52cf-405c-8c52-2f5a73d2cb52" />
+
 
 ![Flaskr di localhost:5001 (Podman)](img/18-browser-5001-podman.png)
 
