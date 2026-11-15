@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| **Nama** | Francisco G I dc Corbafo) |
-| **NIM** | (255410003) |
+| **Nama** | Francisco G I dc Corbafo |
+| **NIM** | 255410003 |
 | **Mata kuliah** | Sistem Terdistribusi dan Terdesentralisasi |
 | **Modul** | Modul 7: Cloud Computing |
 | **Dosen penyusun modul** | Bambang Purnomosidi D.P., Dr., S.E., Ak., S.Kom., MMSI.|
