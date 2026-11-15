@@ -326,9 +326,10 @@ hello-world:latest          c567b231f656       25.9kB         9.49kB
 postgres:18.3-alpine3.23    54451ecb8ab3        409MB          115MB
 ```
 
-Image `flaskr:1.0.0` berhasil dibuat. Image lain berasal dari praktikum sebelumnya.
+Image `flaskr:1.0.0` berhasil dibuat.
 
-![docker image ls](img/11-docker-image-ls.png)
+<img width="1879" height="159" alt="image" src="https://github.com/user-attachments/assets/09eca1fd-8e70-4333-b6bb-99fe4d1694cf" />
+
 
 ### 5.3 Menjalankan image
 
