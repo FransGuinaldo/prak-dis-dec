@@ -378,7 +378,8 @@ CONTAINER ID   IMAGE          COMMAND                  STATUS                   
 4ed9803f292a   flaskr:1.0.0   "flask --app flaskr …"   Exited (0) 11 seconds ago   competent_engelbart
 ```
 
-![docker ps -a](img/14-docker-ps-a.png)
+<img width="1872" height="355" alt="image" src="https://github.com/user-attachments/assets/8d1a632a-c204-494f-adae-2d07073a8553" />
+
 
 Pada posisi ini, CA berhasil dijalankan dengan Docker.
 
