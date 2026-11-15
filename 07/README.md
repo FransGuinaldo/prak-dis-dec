@@ -195,7 +195,8 @@ Python 3.14.4
 
 `uv` memakai interpreter sistem `/usr/bin/python3.14`, sehingga tidak perlu mengunduh Python lagi. Prompt berubah menjadi `(flask-app)` yang menandakan environment aktif.
 
-![Env Python 3.14.4 aktif](img/05-env-python.png)
+<img width="1027" height="271" alt="image" src="https://github.com/user-attachments/assets/e9349535-cc1a-41c9-be93-0420bfab3b8a" />
+
 
 ---
 
