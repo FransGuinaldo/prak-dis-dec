@@ -221,7 +221,8 @@ Installed 8 packages in 5ms
  + werkzeug==3.1.9
 ```
 
-![uv pip install -e .](img/06-uv-pip-install.png)
+<img width="1027" height="417" alt="image" src="https://github.com/user-attachments/assets/3b19fa98-da14-4927-9542-e24c958f8b52" />
+
 
 Inisialisasi database dan jalankan aplikasi:
 
