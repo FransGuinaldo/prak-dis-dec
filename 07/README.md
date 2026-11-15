@@ -309,7 +309,10 @@ sudo docker build -f Dockerfile -t flaskr:1.0.0 .
 
 Build pertama memakan waktu 232,4 detik, sebagian besar (193,1 detik) untuk mengunduh base image `python:3.14`.
 
-![docker build](img/10-docker-build.png)
+<img width="1867" height="687" alt="image" src="https://github.com/user-attachments/assets/22a01c6d-27d2-4e20-a64d-0682d70f2036" />
+<img width="1856" height="626" alt="image" src="https://github.com/user-attachments/assets/ce656bd2-a68c-46d9-9707-d4bfa04fe0e9" />
+
+
 
 ```bash
 sudo docker image ls
