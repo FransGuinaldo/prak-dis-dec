@@ -272,7 +272,8 @@ EXPOSE 5000
 CMD ["flask", "--app", "flaskr", "run", "--host=0.0.0.0", "--port=5000"]
 ```
 
-![Isi Dockerfile](img/09-dockerfile.png)
+<img width="939" height="332" alt="image" src="https://github.com/user-attachments/assets/bb0c1e6f-4d57-4c9e-94f2-dafbb0817807" />
+
 
 | Baris | Fungsi |
 |---|---|
