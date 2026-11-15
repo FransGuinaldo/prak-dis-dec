@@ -129,10 +129,8 @@ $ sudo docker ps
 CONTAINER ID   IMAGE                      ...   STATUS                      NAMES
 9e7da48684d6   postgres:18.3-alpine3.23   ...   Up 2 minutes (unhealthy)    prak-dis-dec-postgres_replica-1
 ```
+<img width="1876" height="157" alt="image" src="https://github.com/user-attachments/assets/2588b52b-f784-49dd-b941-29229172554d" />
 
-Container `postgres` tersebut berasal dari praktikum sebelumnya dan tidak terkait modul ini.
-
-![Error awal Docker dan sudo docker ps](img/03-docker-permission.png)
 
 Pada saat memasang paket, sempat muncul pesan `Waiting for cache lock ... held by process (unattended-upgr)`. Pesan ini wajar, karena proses pembaruan otomatis Ubuntu sedang memakai `apt`, dan perintah selesai sendiri setelah proses tersebut berakhir.
 
