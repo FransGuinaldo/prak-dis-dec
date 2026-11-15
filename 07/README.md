@@ -355,6 +355,7 @@ Press CTRL+C to quit
 ```
 
 <img width="1527" height="430" alt="image" src="https://github.com/user-attachments/assets/98a0909b-8c50-49d8-8e8a-af9bdd12e542" />
+<img width="1179" height="199" alt="Screenshot 2026-11-15 110848" src="https://github.com/user-attachments/assets/27017569-c1eb-42c6-9a32-2110e9f4b659" />
 
 
 
