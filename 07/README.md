@@ -513,30 +513,3 @@ Ubuntu pada WSL2 berperan seperti lapisan infrastruktur (IaaS). Docker dan Podma
 3. Image berhasil dibangun dan dijalankan dengan Docker maupun Podman, dengan port mapping `5001:5000`.
 4. Docker dan Podman sama-sama membaca `Dockerfile`, tetapi berbeda pada arsitektur (daemon vs daemonless) dan model hak akses.
 5. Praktikum di Windows dapat dikerjakan dengan WSL2 dan Docker Desktop dengan penyesuaian terhadap perintah pada modul.
-
----
-
-## Lampiran A. Daftar Screenshot
-
-| No | Nama file | Isi yang diambil |
-|---|---|---|
-| 00 | `00-arsitektur-xaas.png` | Diagram arsitektur XaaS |
-| 01 | `01-wsl-list.png` | `wsl -l -v` di PowerShell |
-| 02 | `02-versi-alat.png` | `git`, `uv`, `podman`, `docker --version` |
-| 03 | `03-docker-permission.png` | Error awal Docker dan `sudo docker ps` |
-| 04 | `04-clone-dan-ls.png` | `git clone`, `cp -R`, `ls -la` |
-| 05 | `05-env-python.png` | `uv venv`, aktivasi, `python --version` |
-| 06 | `06-uv-pip-install.png` | `uv pip install -e .` |
-| 07 | `07-init-db-run.png` | `flask init-db` dan `flask run` |
-| 08 | `08-browser-5000.png` | Browser di `localhost:5000` |
-| 09 | `09-dockerfile.png` | `cat Dockerfile` |
-| 10 | `10-docker-build.png` | `sudo docker build` selesai |
-| 11 | `11-docker-image-ls.png` | `sudo docker image ls` |
-| 12 | `12-docker-run.png` | `sudo docker run -p 5001:5000 flaskr:1.0.0` |
-| 13 | `13-browser-5001-docker.png` | Browser di `localhost:5001` (Docker) |
-| 14 | `14-docker-ps-a.png` | `sudo docker ps -a` |
-| 15 | `15-podman-build.png` | `podman build` selesai |
-| 16 | `16-podman-image-ls.png` | `podman image ls` |
-| 17 | `17-podman-run.png` | `podman run -p 5001:5000 flaskr:1.0.0` |
-| 18 | `18-browser-5001-podman.png` | Browser di `localhost:5001` (Podman) |
-| 19 | `19-podman-log-register-login.png` | Log `POST /auth/register` dan `POST /auth/login` |
