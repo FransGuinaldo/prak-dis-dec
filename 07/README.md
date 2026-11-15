@@ -243,11 +243,13 @@ Press CTRL+C to quit
 127.0.0.1 - - [15/Nov/2026 10:49:10] "GET /favicon.ico HTTP/1.1" 404 -
 ```
 
-![init-db dan flask run](img/07-init-db-run.png)
+<img width="1531" height="203" alt="image" src="https://github.com/user-attachments/assets/56c96df0-5361-4d8f-b3d7-474cc837e4c0" />
+
 
 Aplikasi diakses melalui `http://localhost:5000`.
 
-![Flaskr di localhost:5000](img/08-browser-5000.png)
+<img width="1179" height="199" alt="Screenshot 2026-11-15 110848" src="https://github.com/user-attachments/assets/9ac3ae47-8c61-4632-94c5-c1e29ee84512" />
+
 
 ---
 
