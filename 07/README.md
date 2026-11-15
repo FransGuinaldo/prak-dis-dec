@@ -453,7 +453,8 @@ Press CTRL+C to quit
 <img width="1538" height="180" alt="image" src="https://github.com/user-attachments/assets/e36a3ccb-52cf-405c-8c52-2f5a73d2cb52" />
 
 
-![Flaskr di localhost:5001 (Podman)](img/18-browser-5001-podman.png)
+<img width="1300" height="211" alt="Screenshot 2026-11-15 111714" src="https://github.com/user-attachments/assets/e7b8f540-b5d3-45bd-9b52-53ca350c00fd" />
+
 
 Log akses pengujian register, login, dan logout:
 
@@ -468,7 +469,8 @@ Log akses pengujian register, login, dan logout:
 172.22.185.180 - - [15/Nov/2026 04:18:58] "GET / HTTP/1.1" 200 -
 ```
 
-![Log register, login, logout](img/19-podman-log-register-login.png)
+<img width="1053" height="488" alt="image" src="https://github.com/user-attachments/assets/d7b0d62d-7582-48a3-9d41-c64ddde16c33" />
+
 
 `POST /auth/register` dan `POST /auth/login` dengan kode `302` menunjukkan akun berhasil dibuat dan login berhasil, sehingga database SQLite di dalam container dapat ditulis. Alamat sumber `172.22.185.180` adalah IP jaringan WSL2, berbeda dengan Docker karena Podman rootless memakai jaringan sendiri.
 
