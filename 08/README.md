@@ -25,7 +25,7 @@ Memastikan utilitas `curl` dan `sqlite3` terpasang pada sistem Ubuntu:
 sudo apt update && sudo apt install -y curl sqlite3
 sqlite3 --version
 ```
-* **Hasil:** `sqlite3` versi `3.46.1` dan `curl` versi `8.18.0` telah terpasang dan siap digunakan.
+**Hasil:** `sqlite3` versi `3.46.1` dan `curl` versi `8.18.0` telah terpasang dan siap digunakan.
   ---
   
 <img width="1610" height="428" alt="image" src="https://github.com/user-attachments/assets/0450d3b9-03e4-4ae7-9c06-d2044fb1b5c7" />
@@ -48,6 +48,8 @@ python --version
 ```
 * **Hasil:** `uv 0.13.9` dan `Python 3.14.4` berhasil dikonfigurasi di dalam `.venv`.
  ---
+ <img width="1877" height="906" alt="image" src="https://github.com/user-attachments/assets/c70cdac1-dc1f-4a55-9041-1ef82cab3c90" />
+
  <img width="1183" height="712" alt="image" src="https://github.com/user-attachments/assets/5df21cb5-cada-459f-93b0-b5d19ed2e087" />
 
 
