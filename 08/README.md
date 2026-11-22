@@ -154,7 +154,7 @@ Verifikasi isi tabel menggunakan perintah `sqlite3`:
 ```
 
 <img width="1240" height="701" alt="image" src="https://github.com/user-attachments/assets/bb34a64e-df08-4551-95e1-f61a74a9a570" />
-
+<img width="1543" height="390" alt="image" src="https://github.com/user-attachments/assets/cb35e201-7f24-41e0-a5ce-b166ca8622c5" />
 
 
 ### 3.4. Pengujian Endpoint Produk
